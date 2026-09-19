@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Kiki 🎂</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  overflow-x: hidden;
+  background: #fff7fb;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.birthday-page {
+  min-height: 100vh;
+  padding: 55px 0 90px;
+
+  background:
+    radial-gradient(circle at 15% 10%, #fffafd 0%, transparent 30%),
+    radial-gradient(circle at 85% 25%, #eee2ff 0%, transparent 30%),
+    radial-gradient(circle at 50% 100%, #ffe5f1 0%, transparent 40%),
+    linear-gradient(135deg, #fff7fa, #f7efff);
+
+  color: #705b72;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.decoration {
+  position: absolute;
+  color: #cda2cb;
+  pointer-events: none;
+  animation: float 4s ease-in-out infinite;
+}
+
+.heart-one {
+  top: 12%;
+  left: 9%;
+  font-size: 34px;
+}
+
+.heart-two {
+  top: 52%;
+  right: 8%;
+  font-size: 31px;
+  animation-delay: 1s;
+}
+
+.sparkle-one {
+  top: 25%;
+  right: 13%;
+  font-size: 22px;
+  animation-delay: .5s;
+}
+
+.sparkle-two {
+  bottom: 23%;
+  left: 10%;
+  font-size: 20px;
+  animation-delay: 1.5s;
+}
+
+.flower {
+  bottom: 12%;
+  right: 18%;
+  font-size: 27px;
+  animation-delay: .8s;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.birthday-content {
+  width: 90%;
+  max-width: 430px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.tiny {
+  font-size: 13px;
+  letter-spacing: 3px;
+  opacity: .65;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: normal;
+  color: #805f82;
+  margin-bottom: 15px;
+}
+
+.birthday-message {
+  font-size: 19px;
+  line-height: 1.5;
+  color: #776679;
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   CAKE AREA
+========================= */
+
+.cake-area {
+  width: 100%;
+  height: 285px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  position: relative;
+
+  margin: 10px auto 20px;
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+  width: 245px;
+  height: 180px;
+  position: relative;
+  overflow: visible;
+}
+
+
+/* =========================
+   BOTTOM CAKE LAYER
+========================= */
+
+.cake-bottom {
+  position: absolute;
+
+  bottom: 0;
+  left: 10px;
+
+  width: 225px;
+  height: 82px;
+
+  border-radius: 15px 15px 25px 25px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f7b9cf 0%,
+      #efa8c2 55%,
+      #df91b0 100%
+    );
+
+  box-shadow:
+    0 13px 22px rgba(130, 80, 120, .15);
+}
+
+
+/* BOTTOM CREAM */
+
+.cake-bottom::before {
+  content: "";
+
+  position: absolute;
+
+  top: 17px;
+  left: 0;
+
+  width: 100%;
+  height: 14px;
+
+  background: #fff4f8;
+
+  border-radius: 50%;
+}
+
+.cake-bottom::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 15px;
+  left: 22px;
+
+  width: 180px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 241, 247, .55);
+}
+
+
+/* =========================
+   TOP CAKE LAYER
+========================= */
+
+.cake-top {
+  position: absolute;
+
+  bottom: 61px;
+  left: 25px;
+
+  width: 195px;
+  height: 75px;
+
+  border-radius: 18px 18px 30px 30px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #ffd2df 0%,
+      #f9b7cd 65%,
+      #efa5c0 100%
+    );
+
+  z-index: 3;
+}
+
+
+/* =========================
+   FROSTING
+========================= */
+
+.frosting {
+  position: absolute;
+
+  top: -13px;
+  left: -4px;
+
+  width: 203px;
+  height: 38px;
+
+  background: #fff8fb;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 3px 5px rgba(160, 100, 140, .08);
+
+  z-index: 5;
+}
+
+
+/* FROSTING DRIPS */
+
+.drip {
+  position: absolute;
+
+  width: 18px;
+  height: 30px;
+
+  background: #fff8fb;
+
+  border-radius: 0 0 12px 12px;
+}
+
+.drip-one {
+  left: 28px;
+  top: 18px;
+}
+
+.drip-two {
+  left: 76px;
+  top: 17px;
+  height: 37px;
+}
+
+.drip-three {
+  right: 40px;
+  top: 18px;
+  height: 30px;
+}
+
+.drip-four {
+  right: 13px;
+  top: 16px;
+  height: 25px;
+}
+
+
+/* =========================
+   CAKE DECORATIONS
+========================= */
+
+.berry {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  background: #e8799d;
+
+  border-radius: 50%;
+
+  z-index: 7;
+}
+
+.berry::before {
+  content: "✦";
+
+  position: absolute;
+
+  top: -12px;
+  left: 3px;
+
+  font-size: 11px;
+
+  color: #8fbd82;
+}
+
+.berry-one {
+  left: 42px;
+  top: 22px;
+}
+
+.berry-two {
+  left: 91px;
+  top: 28px;
+}
+
+.berry-three {
+  right: 43px;
+  top: 22px;
+}
+
+.berry-four {
+  right: 76px;
+  top: 12px;
+}
+
+
+/* =========================
+   CANDLES
+========================= */
+
+.candles {
+  position: absolute;
+
+  /*
+     FIXED POSITION:
+     The candles are now higher,
+     sitting ON the frosting.
+  */
+
+  top: -48px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  gap: 27px;
+
+  z-index: 20;
+}
+
+
+/* CANDLE */
+
+.candle {
+  width: 16px;
+  height: 55px;
+
+  position: relative;
+
+  border-radius: 5px 5px 3px 3px;
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #f6a9c5 0px,
+      #f6a9c5 6px,
+      #fff0f6 6px,
+      #fff0f6 11px
+    );
+
+  box-shadow:
+    0 4px 7px rgba(120, 70, 110, .13);
+
+  transition: transform .4s ease;
+}
+
+
+/* WICK */
+
+.candle::before {
+  content: "";
+
+  position: absolute;
+
+  width: 3px;
+  height: 8px;
+
+  background: #62505f;
+
+  left: 50%;
+  top: -7px;
+
+  transform: translateX(-50%);
+
+  border-radius: 2px;
+}
+
+
+/* =========================
+   FLAME
+========================= */
+
+.flame {
+  position: absolute;
+
+  width: 15px;
+  height: 22px;
+
+  left: 50%;
+  top: -30px;
+
+  transform: translateX(-50%);
+
+  background: #ffb52e;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 10px rgba(255, 176, 45, .55);
+
+  animation:
+    flame 1s ease-in-out infinite alternate;
+
+  transition:
+    opacity .3s ease,
+    transform .5s ease;
+}
+
+
+/* INNER FLAME */
+
+.flame::after {
+  content: "";
+
+  position: absolute;
+
+  width: 7px;
+  height: 11px;
+
+  left: 50%;
+  bottom: 3px;
+
+  transform: translateX(-50%);
+
+  background: #fff4b0;
+
+  border-radius: 50%;
+}
+
+
+/* =========================
+   BLOWN OUT
+========================= */
+
+.candle.blown {
+  transform: translateY(-3px);
+}
+
+.candle.blown .flame {
+  opacity: 0;
+
+  transform:
+    translateX(-50%)
+    translateY(-15px)
+    scale(.2);
+}
+
+
+/* SMOKE */
+
+.candle.blown::after {
+  content: "〰";
+
+  position: absolute;
+
+  top: -39px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 19px;
+
+  color: #aaa0ac;
+
+  opacity: 0;
+
+  animation:
+    smoke 1.2s ease-out forwards;
+}
+
+
+/* =========================
+   WISH BUTTON
+========================= */
+
+.wish-button {
+  border: none;
+
+  padding: 15px 30px;
+
+  border-radius: 32px;
+
+  background: rgba(255,255,255,.92);
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+
+  box-shadow:
+    0 10px 28px rgba(130,90,140,.13);
+
+  cursor: pointer;
+
+  transition: transform .2s ease;
+}
+
+.wish-button:active {
+  transform: scale(.95);
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.wish-result {
+  margin-top: 25px;
+  min-height: 120px;
+}
+
+#wish-text {
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  color: #96627f;
+
+  max-width: 380px;
+
+  margin: 0 auto 22px;
+}
+
+
+/* =========================
+   LETTER BUTTON
+========================= */
+
+#letter-button {
+  border: none;
+
+  padding: 15px 25px;
+
+  border-radius: 32px;
+
+  background: rgba(255,255,255,.92);
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+
+  line-height: 1.4;
+
+  box-shadow:
+    0 9px 25px rgba(130,90,140,.12);
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity .4s ease,
+    transform .4s ease;
+}
+
+#letter-button.show {
+  opacity: 1;
+
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float {
+
+  0%, 100% {
+    transform: translateY(0);
+    opacity: .5;
+  }
+
+  50% {
+    transform: translateY(-11px);
+    opacity: 1;
+  }
+
+}
+
+@keyframes flame {
+
+  0% {
+    transform:
+      translateX(-50%)
+      scale(1)
+      rotate(-3deg);
+  }
+
+  100% {
+    transform:
+      translateX(-50%)
+      scale(1.08)
+      rotate(3deg);
+  }
+
+}
+
+@keyframes smoke {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateX(-50%)
+      translateY(5px)
+      scale(.7);
+  }
+
+  30% {
+    opacity: .7;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translateX(-50%)
+      translateY(-25px)
+      scale(1.2);
+  }
+
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .cake-area {
+    transform: scale(.9);
+    transform-origin: center;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main class="birthday-page">
+
+
+  <!-- DECORATIONS -->
+
+  <div class="decoration heart-one">♡</div>
+
+  <div class="decoration heart-two">♡</div>
+
+  <div class="decoration sparkle-one">✦</div>
+
+  <div class="decoration sparkle-two">✧</div>
+
+  <div class="decoration flower">✿</div>
+
+
+  <div class="birthday-content">
+
+
+    <p class="tiny">
+      okay... this is your moment ♡
+    </p>
+
+
+    <h1>
+      Happy Birthday,<br>
+      Kiki! 🎀
+    </h1>
+
+
+    <p class="birthday-message">
+      Make a wish... ✨
+    </p>
+
+
+    <!-- =====================
+         CAKE
+    ====================== -->
+
+    <div class="cake-area">
+
+      <div class="cake">
+
+
+        <!-- TOP LAYER -->
+
+        <div class="cake-top">
+
+
+          <!-- FROSTING -->
+
+          <div class="frosting">
+
+            <div class="drip drip-one"></div>
+
+            <div class="drip drip-two"></div>
+
+            <div class="drip drip-three"></div>
+
+            <div class="drip drip-four"></div>
+
+          </div>
+
+
+          <!-- DECORATIONS -->
+
+          <div class="berry berry-one"></div>
+
+          <div class="berry berry-two"></div>
+
+          <div class="berry berry-three"></div>
+
+          <div class="berry berry-four"></div>
+
+
+          <!-- =================
+               CANDLES
+          ================== -->
+
+          <div class="candles">
+
+
+            <div class="candle">
+
+              <span class="flame"></span>
+
+            </div>
+
+
+            <div class="candle">
+
+              <span class="flame"></span>
+
+            </div>
+
+
+            <div class="candle">
+
+              <span class="flame"></span>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- BOTTOM LAYER -->
+
+        <div class="cake-bottom"></div>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- MAKE A WISH -->
+
+    <button
+      class="wish-button"
+      id="wishButton">
+
+      MAKE A WISH ✨
+
+    </button>
+
+
+    <!-- WISH RESULT -->
+
+    <div class="wish-result">
+
+      <p id="wish-text"></p>
+
+
+      <button id="letter-button">
+
+        I HAVE SOMETHING ELSE FOR YOU → 💌
+
+      </button>
+
+    </div>
+
+
+  </div>
+
+</main>
+
+
+<script>
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const wishButton =
+  document.getElementById("wishButton");
+
+const wishText =
+  document.getElementById("wish-text");
+
+const letterButton =
+  document.getElementById("letter-button");
+
+const candles =
+  document.querySelectorAll(".candle");
+
+
+/* =========================
+   MAKE A WISH
+========================= */
+
+wishButton.addEventListener("click", function() {
+
+
+  /* Blow out candles */
+
+  candles.forEach(function(candle) {
+
+    candle.classList.add("blown");
+
+  });
+
+
+  /* Wish message */
+
+  wishText.textContent =
+    "✨ Wish made! I hope this year brings you so many beautiful little moments. 💗";
+
+
+  /* Change button */
+
+  wishButton.textContent =
+    "WISH MADE ✨";
+
+
+  /* Show Page 7 button */
+
+  letterButton.classList.add("show");
+
+});
+
+
+/* =========================
+   GO TO PAGE 7
+========================= */
+
+letterButton.addEventListener("click", function() {
+
+  window.location.href = "page7.html";
+
+});
+
+</script>
+
+</body>
+</html>

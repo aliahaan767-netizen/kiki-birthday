@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mystery 🎁</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: #705b72;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.mystery-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 38px 18px 45px;
+
+  background:
+    radial-gradient(circle at 15% 15%, #ffffff 0%, transparent 28%),
+    radial-gradient(circle at 85% 20%, #eee3ff 0%, transparent 30%),
+    radial-gradient(circle at 15% 85%, #ffe8f3 0%, transparent 32%),
+    linear-gradient(135deg, #fff6fa, #f8f0ff);
+}
+
+
+/* =========================
+   DECOR
+========================= */
+
+.decor {
+  position: absolute;
+  pointer-events: none;
+  color: #c49ac8;
+  opacity: .55;
+  animation: float 4s ease-in-out infinite;
+}
+
+.decor1 {
+  top: 12%;
+  left: 9%;
+  font-size: 20px;
+}
+
+.decor2 {
+  top: 20%;
+  right: 9%;
+  font-size: 18px;
+  animation-delay: 1s;
+}
+
+.decor3 {
+  bottom: 15%;
+  left: 10%;
+  font-size: 22px;
+  animation-delay: .6s;
+}
+
+.decor4 {
+  bottom: 22%;
+  right: 10%;
+  font-size: 17px;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  width: 92%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.small-text {
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: .6;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 31px;
+  font-weight: normal;
+  color: #805f82;
+  margin-bottom: 9px;
+}
+
+.header p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.line {
+  width: 45px;
+  height: 1px;
+  margin: 11px auto;
+  background: #cdaecc;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.mystery-card {
+  width: 92%;
+  max-width: 380px;
+
+  margin-top: 28px;
+
+  padding: 28px 20px;
+
+  text-align: center;
+
+  background: rgba(255,255,255,.78);
+
+  border: 1px solid rgba(218,196,220,.7);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 35px rgba(120,90,130,.12);
+
+  position: relative;
+  z-index: 5;
+}
+
+
+/* =========================
+   ENVELOPE AREA
+========================= */
+
+.envelope-area {
+  width: 230px;
+  height: 175px;
+
+  margin: 0 auto 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope {
+  width: 190px;
+  height: 125px;
+
+  position: relative;
+
+  cursor: pointer;
+
+  filter:
+    drop-shadow(0 12px 14px rgba(120,90,130,.15));
+
+  animation: envelopeFloat 3.5s ease-in-out infinite;
+
+  transition: transform .3s ease;
+}
+
+.envelope:active {
+  transform: scale(.94);
+}
+
+@keyframes envelopeFloat {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+
+/* =========================
+   ENVELOPE BACK
+========================= */
+
+.envelope-back {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 190px;
+  height: 120px;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff1f7,
+      #f1e7ff
+    );
+
+  border: 1px solid rgba(197,169,204,.7);
+
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+
+/* =========================
+   LOWER FOLDS
+========================= */
+
+.fold-left {
+  position: absolute;
+
+  bottom: -39px;
+  left: -27px;
+
+  width: 145px;
+  height: 80px;
+
+  background: #f8eaf4;
+
+  border-top: 1px solid rgba(190,160,195,.55);
+
+  transform: rotate(32deg);
+
+  z-index: 3;
+}
+
+.fold-right {
+  position: absolute;
+
+  bottom: -39px;
+  right: -27px;
+
+  width: 145px;
+  height: 80px;
+
+  background: #eee6fa;
+
+  border-top: 1px solid rgba(190,160,195,.55);
+
+  transform: rotate(-32deg);
+
+  z-index: 3;
+}
+
+
+/* =========================
+   TOP FLAP
+========================= */
+
+.flap {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 190px;
+  height: 88px;
+
+  background:
+    linear-gradient(
+      160deg,
+      #f8e8f4,
+      #fff4fa
+    );
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  );
+
+  border-radius: 11px 11px 0 0;
+
+  transform-origin: top center;
+
+  z-index: 5;
+
+  transition:
+    transform .7s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =========================
+   HEART SEAL
+========================= */
+
+.seal {
+  position: absolute;
+
+  left: 50%;
+  top: 61%;
+
+  transform: translate(-50%, -50%);
+
+  width: 39px;
+  height: 39px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,.96);
+
+  border: 1px solid rgba(210,180,210,.6);
+
+  box-shadow:
+    0 5px 13px rgba(120,90,130,.16);
+
+  color: #d18bae;
+
+  font-size: 20px;
+
+  z-index: 8;
+
+  transition:
+    opacity .35s ease,
+    transform .4s ease;
+}
+
+
+/* =========================
+   OPEN ANIMATION
+========================= */
+
+.envelope.open {
+  animation: none;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .seal {
+  opacity: 0;
+  transform:
+    translate(-50%, -50%)
+    scale(.5);
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.mystery-title {
+  font-size: 22px;
+  font-weight: normal;
+  color: #805f82;
+
+  margin-bottom: 9px;
+}
+
+.mystery-text {
+  max-width: 290px;
+
+  margin: 0 auto 18px;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-button,
+.back-button {
+
+  border: none;
+
+  border-radius: 25px;
+
+  padding: 12px 23px;
+
+  background: rgba(255,255,255,.95);
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  box-shadow:
+    0 7px 18px rgba(120,90,130,.12);
+
+  cursor: pointer;
+
+  transition: transform .2s ease;
+}
+
+.main-button:active,
+.back-button:active {
+  transform: scale(.93);
+}
+
+
+/* =========================
+   SECOND STEP
+========================= */
+
+.step-two {
+  display: none;
+
+  animation: appear .5s ease;
+}
+
+.step-icon {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.step-two h2 {
+  font-size: 22px;
+  font-weight: normal;
+  color: #805f82;
+
+  margin-bottom: 9px;
+}
+
+.step-two p {
+  max-width: 285px;
+
+  margin: 0 auto 18px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.choice-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.choice-buttons button {
+
+  flex: 1;
+
+  min-height: 47px;
+
+  border: 1px solid rgba(218,196,220,.7);
+
+  border-radius: 19px;
+
+  background: rgba(255,255,255,.85);
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: transform .2s ease;
+}
+
+.choice-buttons button:active {
+  transform: scale(.93);
+}
+
+
+/* =========================
+   WAIT MESSAGE
+========================= */
+
+.wait-message {
+
+  display: none;
+
+  margin-top: 15px;
+
+  color: #98677f;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  animation: appear .4s ease;
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal {
+  display: none;
+
+  animation: reveal .7s ease;
+}
+
+@keyframes appear {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes reveal {
+
+  0% {
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+  60% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+.reveal-icon {
+  font-size: 43px;
+  margin-bottom: 10px;
+}
+
+.reveal h2 {
+  font-size: 22px;
+  font-weight: normal;
+
+  color: #805f82;
+
+  margin-bottom: 11px;
+}
+
+.reveal p {
+
+  max-width: 295px;
+
+  margin: 0 auto 19px;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle {
+
+  position: fixed;
+
+  z-index: 100;
+
+  pointer-events: none;
+
+  color: #c99dce;
+
+  font-size: 21px;
+
+  animation:
+    sparkle .9s ease forwards;
+}
+
+@keyframes sparkle {
+
+  0% {
+    opacity: 0;
+    transform: scale(.3) translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-40px);
+  }
+
+}
+
+
+/* =========================
+   SMALL SCREEN
+========================= */
+
+@media (max-width: 360px) {
+
+  .mystery-card {
+    margin-top: 20px;
+  }
+
+  .envelope {
+    transform: scale(.88);
+  }
+
+  .envelope:active {
+    transform: scale(.83);
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main class="mystery-page">
+
+
+<!-- DECOR -->
+
+<div class="decor decor1">✦</div>
+<div class="decor decor2">✧</div>
+<div class="decor decor3">♡</div>
+<div class="decor decor4">✦</div>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+  <div class="small-text">
+    you picked the mystery route 🎁
+  </div>
+
+  <h1>
+    You found something...
+  </h1>
+
+  <div class="line"></div>
+
+  <p>
+    This wasn't supposed to be here. 👀
+  </p>
+
+</div>
+
+
+<!-- MAIN CARD -->
+
+<div class="mystery-card">
+
+
+<!-- ENVELOPE -->
+
+<div class="envelope-area">
+
+  <div
+    class="envelope"
+    id="envelope"
+    onclick="openEnvelope()"
+  >
+
+    <div class="envelope-back">
+
+      <div class="fold-left"></div>
+      <div class="fold-right"></div>
+
+    </div>
+
+    <div class="flap"></div>
+
+    <div class="seal">
+      ♡
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FIRST STEP -->
+
+<div id="firstStep">
+
+  <h2 class="mystery-title">
+    Something is inside.
+  </h2>
+
+  <p class="mystery-text">
+
+    I don't think you're supposed to open this...
+
+    <br><br>
+
+    But it's your choice. 👀
+
+  </p>
+
+  <button
+    class="main-button"
+    onclick="openEnvelope()"
+  >
+    Open it? 🎁
+  </button>
+
+</div>
+
+
+<!-- SECOND STEP -->
+
+<div
+  class="step-two"
+  id="stepTwo"
+>
+
+  <div class="step-icon">
+    🤨
+  </div>
+
+  <h2>
+    Are you sure?
+  </h2>
+
+  <p>
+
+    Like... really sure?
+
+    <br>
+
+    There's no going back after this.
+
+  </p>
+
+
+  <div class="choice-buttons">
+
+    <button onclick="waitFirst()">
+      Wait...
+    </button>
+
+    <button onclick="reallyOpen()">
+      Yes 👀
+    </button>
+
+  </div>
+
+
+  <div
+    class="wait-message"
+    id="waitMessage"
+  >
+
+    Good decision. 😌
+
+    <br>
+
+    ...but you're already here. 💀
+
+  </div>
+
+</div>
+
+
+<!-- FINAL REVEAL -->
+
+<div
+  class="reveal"
+  id="reveal"
+>
+
+  <div class="reveal-icon">
+    ✨
+  </div>
+
+  <h2>
+    YOU WEREN'T SUPPOSED TO FIND THIS.
+  </h2>
+
+  <p>
+
+    Some things don't belong in the scrapbook.
+
+    <br><br>
+
+    But this one belongs here. ♡
+
+    <br><br>
+
+    Some mysteries are better left unsolved. 👀
+
+  </p>
+
+  <button
+    class="back-button"
+    onclick="window.location.href='page9.html'"
+  >
+    ← Back to choices
+  </button>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<script>
+
+
+let opened = false;
+
+
+/* =========================
+   OPEN ENVELOPE
+========================= */
+
+function openEnvelope() {
+
+  if (opened) return;
+
+  opened = true;
+
+  const envelope =
+    document.getElementById("envelope");
+
+  const firstStep =
+    document.getElementById("firstStep");
+
+  const stepTwo =
+    document.getElementById("stepTwo");
+
+
+  envelope.classList.add("open");
+
+  createSparkles();
+
+
+  setTimeout(function() {
+
+    firstStep.style.display = "none";
+
+    stepTwo.style.display = "block";
+
+  }, 700);
+
+}
+
+
+/* =========================
+   WAIT
+========================= */
+
+function waitFirst() {
+
+  const message =
+    document.getElementById("waitMessage");
+
+  message.style.display = "block";
+
+}
+
+
+/* =========================
+   YES
+========================= */
+
+function reallyOpen() {
+
+  const stepTwo =
+    document.getElementById("stepTwo");
+
+  const reveal =
+    document.getElementById("reveal");
+
+
+  stepTwo.style.display = "none";
+
+  createSparkles();
+
+
+  setTimeout(function() {
+
+    reveal.style.display = "block";
+
+    createSparkles();
+
+  }, 350);
+
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+function createSparkles() {
+
+  const symbols = [
+    "✦",
+    "✧",
+    "♡",
+    "✨"
+  ];
+
+
+  for (
+    let i = 0;
+    i < 8;
+    i++
+  ) {
+
+    const sparkle =
+      document.createElement("div");
+
+    sparkle.className =
+      "sparkle";
+
+    sparkle.textContent =
+      symbols[
+        Math.floor(
+          Math.random() *
+          symbols.length
+        )
+      ];
+
+
+    sparkle.style.left =
+      (25 + Math.random() * 50) + "%";
+
+
+    sparkle.style.top =
+      (25 + Math.random() * 45) + "%";
+
+
+    sparkle.style.animationDelay =
+      (Math.random() * .2) + "s";
+
+
+    document.body.appendChild(
+      sparkle
+    );
+
+
+    setTimeout(function() {
+
+      sparkle.remove();
+
+    }, 1000);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>

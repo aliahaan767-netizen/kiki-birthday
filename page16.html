@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Kiki 🌙</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: #ddd4ec;
+  overflow: hidden;
+}
+
+
+/* =========================
+   DREAMY MIDNIGHT PAGE
+========================= */
+
+.final-page {
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 25px 18px;
+
+  background:
+    radial-gradient(circle at 50% 15%, #3a315b 0%, transparent 28%),
+    radial-gradient(circle at 15% 80%, #33284d 0%, transparent 35%),
+    radial-gradient(circle at 90% 70%, #292444 0%, transparent 35%),
+    linear-gradient(145deg, #111122, #17142d 48%, #211936);
+
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.star {
+  position: absolute;
+  color: #e9ddff;
+  pointer-events: none;
+  opacity: .65;
+
+  animation:
+    twinkle 3s ease-in-out infinite;
+}
+
+.s1 {
+  top: 10%;
+  left: 12%;
+  font-size: 16px;
+}
+
+.s2 {
+  top: 17%;
+  right: 14%;
+  font-size: 11px;
+  animation-delay: 1s;
+}
+
+.s3 {
+  top: 34%;
+  left: 6%;
+  font-size: 10px;
+  animation-delay: .5s;
+}
+
+.s4 {
+  bottom: 15%;
+  right: 12%;
+  font-size: 16px;
+  animation-delay: 1.4s;
+}
+
+.s5 {
+  bottom: 24%;
+  left: 13%;
+  font-size: 10px;
+  animation-delay: .8s;
+}
+
+.s6 {
+  top: 8%;
+  right: 38%;
+  font-size: 8px;
+  animation-delay: 1.8s;
+}
+
+@keyframes twinkle {
+
+  0%,100% {
+    opacity: .25;
+    transform: scale(.8);
+  }
+
+  50% {
+    opacity: .9;
+    transform: scale(1.3);
+  }
+
+}
+
+
+/* =========================
+   MOON
+========================= */
+
+.moon {
+
+  position: absolute;
+
+  top: 8%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+
+  background: #eee5ff;
+
+  box-shadow:
+    0 0 18px rgba(218,201,255,.45),
+    0 0 45px rgba(170,140,230,.18);
+
+  opacity: .9;
+
+}
+
+
+/* moon shadow */
+
+.moon::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 51px;
+  height: 51px;
+
+  border-radius: 50%;
+
+  background: #17142d;
+
+  left: 16px;
+  top: -5px;
+
+}
+
+
+/* =========================
+   DECOR HEARTS
+========================= */
+
+.decor {
+
+  position: absolute;
+
+  color: #c9a9e8;
+
+  opacity: .5;
+
+  pointer-events: none;
+
+  animation:
+    float 4s ease-in-out infinite;
+}
+
+.d1 {
+  bottom: 17%;
+  left: 8%;
+  font-size: 21px;
+}
+
+.d2 {
+  top: 28%;
+  right: 8%;
+  font-size: 16px;
+  animation-delay: 1s;
+}
+
+.d3 {
+  bottom: 30%;
+  right: 15%;
+  font-size: 12px;
+  animation-delay: .6s;
+}
+
+@keyframes float {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+  width: 92%;
+  max-width: 390px;
+
+  padding: 32px 22px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(42,35,65,.94),
+      rgba(31,27,51,.94)
+    );
+
+  border:
+    1px solid rgba(186,157,224,.22);
+
+  border-radius: 31px;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.42),
+    0 0 35px rgba(132,99,185,.08);
+
+  position: relative;
+
+  z-index: 5;
+
+  animation: cardIn .8s ease;
+}
+
+@keyframes cardIn {
+
+  from {
+    opacity: 0;
+    transform:
+      scale(.94)
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+}
+
+
+/* =========================
+   TOP TEXT
+========================= */
+
+.small {
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #bdaed2;
+
+  opacity: .7;
+
+  margin-bottom: 10px;
+}
+
+h1 {
+
+  font-size: 28px;
+
+  font-weight: normal;
+
+  color: #eee4ff;
+
+  margin-bottom: 8px;
+
+  text-shadow:
+    0 0 15px rgba(209,184,255,.15);
+}
+
+.subtitle {
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  color: #c9bed8;
+
+  margin-bottom: 23px;
+}
+
+
+/* =========================
+   GIFT AREA
+========================= */
+
+.gift-area {
+
+  width: 210px;
+  height: 205px;
+
+  margin: 0 auto 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift {
+
+  width: 145px;
+  height: 125px;
+
+  position: relative;
+
+  cursor: pointer;
+
+  animation:
+    giftFloat 2.8s ease-in-out infinite;
+
+  transition:
+    transform .25s ease;
+
+  filter:
+    drop-shadow(
+      0 12px 18px rgba(0,0,0,.35)
+    );
+}
+
+.gift:active {
+  transform: scale(.94);
+}
+
+@keyframes giftFloat {
+
+  0%,100% {
+    transform:
+      translateY(0)
+      rotate(0);
+  }
+
+  50% {
+    transform:
+      translateY(-7px)
+      rotate(1deg);
+  }
+
+}
+
+
+/* =========================
+   GIFT BOX
+========================= */
+
+.box {
+
+  position: absolute;
+
+  bottom: 0;
+  left: 10px;
+
+  width: 125px;
+  height: 87px;
+
+  border-radius:
+    7px 7px 11px 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5b426f,
+      #47365f
+    );
+
+  border:
+    1px solid rgba(201,170,231,.3);
+
+  box-shadow:
+    inset 0 0 20px rgba(255,255,255,.035),
+    0 10px 20px rgba(0,0,0,.28);
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   RIBBONS
+========================= */
+
+.ribbon-vertical {
+
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  transform: translateX(-50%);
+
+  width: 25px;
+  height: 100%;
+
+  background:
+    rgba(218,193,243,.38);
+
+  border-left:
+    1px solid rgba(225,204,245,.15);
+
+  border-right:
+    1px solid rgba(225,204,245,.15);
+}
+
+.ribbon-horizontal {
+
+  position: absolute;
+
+  left: 0;
+  top: 25px;
+
+  width: 100%;
+  height: 20px;
+
+  background:
+    rgba(218,193,243,.27);
+
+  border-top:
+    1px solid rgba(225,204,245,.12);
+
+  border-bottom:
+    1px solid rgba(225,204,245,.12);
+}
+
+
+/* =========================
+   LID
+========================= */
+
+.lid {
+
+  position: absolute;
+
+  left: 4px;
+  top: 18px;
+
+  width: 137px;
+  height: 29px;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #73537f,
+      #5b456f
+    );
+
+  border:
+    1px solid rgba(207,178,234,.32);
+
+  z-index: 4;
+
+  transition:
+    transform .9s cubic-bezier(.2,.8,.2,1),
+    opacity .4s ease;
+}
+
+.lid-ribbon {
+
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  transform: translateX(-50%);
+
+  width: 25px;
+  height: 100%;
+
+  background:
+    rgba(225,203,245,.35);
+}
+
+
+/* =========================
+   BOW
+========================= */
+
+.bow {
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 65px;
+  height: 38px;
+
+  z-index: 6;
+
+  transition:
+    transform .7s ease,
+    opacity .4s ease;
+}
+
+.bow-left,
+.bow-right {
+
+  position: absolute;
+
+  top: 5px;
+
+  width: 32px;
+  height: 25px;
+
+  background:
+    #9a6fa8;
+
+  border:
+    1px solid rgba(215,190,236,.3);
+}
+
+.bow-left {
+
+  left: 0;
+
+  border-radius:
+    20px 5px 20px 5px;
+
+  transform: rotate(-17deg);
+}
+
+.bow-right {
+
+  right: 0;
+
+  border-radius:
+    5px 20px 5px 20px;
+
+  transform: rotate(17deg);
+}
+
+.bow-center {
+
+  position: absolute;
+
+  left: 50%;
+  top: 10px;
+
+  transform: translateX(-50%);
+
+  width: 17px;
+  height: 17px;
+
+  border-radius: 50%;
+
+  background: #b987b5;
+
+  box-shadow:
+    0 0 9px rgba(211,168,221,.3);
+}
+
+
+/* =========================
+   OPEN GIFT
+========================= */
+
+.gift.open {
+
+  animation: none;
+}
+
+.gift.open .lid {
+
+  transform:
+    translateY(-75px)
+    rotate(-7deg);
+
+  opacity: .2;
+}
+
+.gift.open .bow {
+
+  transform:
+    translateX(-50%)
+    translateY(-78px)
+    rotate(-8deg);
+
+  opacity: .15;
+}
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+.open-button {
+
+  border:
+    1px solid rgba(201,174,226,.2);
+
+  border-radius: 26px;
+
+  padding: 13px 24px;
+
+  background:
+    rgba(71,57,91,.8);
+
+  color: #e9def6;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.25),
+    inset 0 0 15px rgba(255,255,255,.025);
+
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.open-button:active {
+
+  transform: scale(.93);
+}
+
+.open-button:hover {
+
+  background:
+    rgba(87,68,111,.9);
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+
+  display: none;
+
+  animation:
+    reveal .8s ease;
+}
+
+@keyframes reveal {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(.8)
+      translateY(12px);
+  }
+
+  60% {
+
+    transform:
+      scale(1.04)
+      translateY(0);
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+
+}
+
+.final-heart {
+
+  font-size: 42px;
+
+  color: #d8b8ef;
+
+  margin-bottom: 8px;
+
+  text-shadow:
+    0 0 18px rgba(207,171,240,.4);
+
+  animation:
+    heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+}
+
+.final-message h2 {
+
+  font-size: 27px;
+
+  font-weight: normal;
+
+  color: #eee4ff;
+
+  margin-bottom: 13px;
+
+  text-shadow:
+    0 0 15px rgba(214,189,245,.15);
+}
+
+.final-message p {
+
+  max-width: 310px;
+
+  margin: 0 auto;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+
+  color: #cfc3dc;
+}
+
+.signature {
+
+  margin-top: 17px;
+
+  font-size: 13px;
+
+  color: #bca1ca;
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle {
+
+  position: fixed;
+
+  z-index: 100;
+
+  pointer-events: none;
+
+  font-size: 22px;
+
+  color: #e4d4ff;
+
+  text-shadow:
+    0 0 10px rgba(214,190,255,.7);
+
+  animation:
+    sparkle .95s ease forwards;
+}
+
+@keyframes sparkle {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(.3)
+      translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      scale(1.5)
+      translateY(-45px);
+  }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart-pop {
+
+  position: fixed;
+
+  z-index: 90;
+
+  pointer-events: none;
+
+  font-size: 20px;
+
+  color: #d7b5ed;
+
+  text-shadow:
+    0 0 10px rgba(215,181,237,.5);
+
+  animation:
+    heartPop 1.3s ease forwards;
+}
+
+@keyframes heartPop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(0)
+      scale(.4);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translateY(-120px)
+      scale(1.15);
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 360px) {
+
+  .card {
+    padding: 27px 18px;
+  }
+
+  .gift-area {
+    transform: scale(.9);
+
+    margin-top: -5px;
+    margin-bottom: -5px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main class="final-page">
+
+
+<!-- MOON -->
+
+<div class="moon"></div>
+
+
+<!-- STARS -->
+
+<div class="star s1">✦</div>
+<div class="star s2">✧</div>
+<div class="star s3">✦</div>
+<div class="star s4">✧</div>
+<div class="star s5">✦</div>
+<div class="star s6">·</div>
+
+
+<!-- HEART DECOR -->
+
+<div class="decor d1">♡</div>
+<div class="decor d2">♡</div>
+<div class="decor d3">✧</div>
+
+
+<section class="card">
+
+
+<!-- =========================
+     BEFORE OPENING
+========================= -->
+
+<div id="before">
+
+  <div class="small">
+    okay... this is actually it ♡
+  </div>
+
+  <h1>
+    Your final gift 🎁
+  </h1>
+
+  <p class="subtitle">
+
+    No more suspicious routes.
+
+    <br>
+
+    No more hidden things.
+
+    <br>
+
+    Probably.
+
+  </p>
+
+
+  <!-- GIFT -->
+
+  <div class="gift-area">
+
+    <div
+      class="gift"
+      id="gift"
+      onclick="openGift()"
+    >
+
+      <div class="box">
+
+        <div class="ribbon-vertical"></div>
+
+        <div class="ribbon-horizontal"></div>
+
+      </div>
+
+
+      <div class="lid">
+
+        <div class="lid-ribbon"></div>
+
+      </div>
+
+
+      <div class="bow">
+
+        <div class="bow-left"></div>
+
+        <div class="bow-right"></div>
+
+        <div class="bow-center"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="open-button"
+    onclick="openGift()"
+  >
+    Open your gift → 🎁
+  </button>
+
+</div>
+
+
+<!-- =========================
+     FINAL MESSAGE
+========================= -->
+
+<div
+  class="final-message"
+  id="finalMessage"
+>
+
+  <div class="final-heart">
+    ♡
+  </div>
+
+  <h2>
+    Happy Birthday, Kiki! 🎂
+  </h2>
+
+  <p>
+
+    And that's the end. 😭
+
+    <br><br>
+
+    Thank you for all the random conversations,
+    ridiculous memories, and all the moments
+    that somehow became memories worth keeping.
+
+    <br><br>
+
+    Bas khush reh,
+    apne goals complete kar,
+    aur aise hi reh.
+
+    <br><br>
+
+    And please continue pretending
+    you're innocent even though
+    we both know the truth. 💀😭
+
+  </p>
+
+  <div class="signature">
+    Love you, bestie. ♡
+  </div>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<script>
+
+let giftOpened = false;
+
+
+/* =========================
+   OPEN GIFT
+========================= */
+
+function openGift() {
+
+  if (giftOpened) return;
+
+  giftOpened = true;
+
+
+  const gift =
+    document.getElementById("gift");
+
+  const before =
+    document.getElementById("before");
+
+  const finalMessage =
+    document.getElementById("finalMessage");
+
+
+  gift.classList.add("open");
+
+
+  createSparkles();
+
+  createHearts();
+
+
+  setTimeout(function() {
+
+    before.style.display =
+      "none";
+
+    finalMessage.style.display =
+      "block";
+
+    createSparkles();
+
+    createHearts();
+
+  }, 950);
+
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+function createSparkles() {
+
+  const symbols = [
+    "✦",
+    "✧",
+    "♡",
+    "✨"
+  ];
+
+
+  for (
+    let i = 0;
+    i < 14;
+    i++
+  ) {
+
+    const sparkle =
+      document.createElement("div");
+
+    sparkle.className =
+      "sparkle";
+
+    sparkle.textContent =
+      symbols[
+        Math.floor(
+          Math.random() *
+          symbols.length
+        )
+      ];
+
+
+    sparkle.style.left =
+      (15 + Math.random() * 70) + "%";
+
+
+    sparkle.style.top =
+      (25 + Math.random() * 55) + "%";
+
+
+    sparkle.style.animationDelay =
+      (Math.random() * .35) + "s";
+
+
+    document.body.appendChild(
+      sparkle
+    );
+
+
+    setTimeout(function() {
+
+      sparkle.remove();
+
+    }, 1200);
+
+  }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHearts() {
+
+  for (
+    let i = 0;
+    i < 9;
+    i++
+  ) {
+
+    const heart =
+      document.createElement("div");
+
+    heart.className =
+      "heart-pop";
+
+    heart.textContent =
+      "♡";
+
+
+    heart.style.left =
+      (20 + Math.random() * 60) + "%";
+
+
+    heart.style.top =
+      (55 + Math.random() * 20) + "%";
+
+
+    heart.style.animationDelay =
+      (Math.random() * .5) + "s";
+
+
+    document.body.appendChild(
+      heart
+    );
+
+
+    setTimeout(function() {
+
+      heart.remove();
+
+    }, 1500);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>

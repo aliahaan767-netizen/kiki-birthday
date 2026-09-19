@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pick One 💗</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #705b72;
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  padding: 34px 18px 30px;
+
+  background:
+    radial-gradient(circle at 10% 10%, #fffafd 0%, transparent 30%),
+    radial-gradient(circle at 90% 20%, #f1e7ff 0%, transparent 32%),
+    radial-gradient(circle at 15% 90%, #ffeaf4 0%, transparent 32%),
+    linear-gradient(135deg, #fff6fa, #f9f1ff);
+}
+
+
+/* DECORATIONS */
+
+.decor {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: .5;
+}
+
+.decor-one {
+  top: 9%;
+  left: 8%;
+  font-size: 18px;
+}
+
+.decor-two {
+  top: 12%;
+  right: 9%;
+  font-size: 15px;
+}
+
+.decor-three {
+  bottom: 13%;
+  left: 8%;
+  font-size: 16px;
+}
+
+.decor-four {
+  bottom: 16%;
+  right: 9%;
+  font-size: 18px;
+}
+
+
+/* HEADER */
+
+.header {
+  position: relative;
+  z-index: 5;
+
+  text-align: center;
+
+  width: 100%;
+  max-width: 420px;
+
+  margin: 0 auto 26px;
+}
+
+.small {
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: .58;
+  margin-bottom: 9px;
+}
+
+.header h1 {
+  margin: 0 0 9px;
+
+  font-size: 32px;
+  font-weight: normal;
+
+  color: #805f82;
+}
+
+.header p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.line {
+  width: 42px;
+  height: 1px;
+
+  margin: 12px auto;
+
+  background: rgba(170,135,175,.4);
+}
+
+
+/* CHOICES */
+
+.choices {
+
+  position: relative;
+  z-index: 10;
+
+  width: 92%;
+  max-width: 380px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+
+/* EACH TAP BOX */
+
+.choice {
+
+  position: relative;
+
+  width: 100%;
+  min-height: 150px;
+
+  border: none;
+  padding: 0;
+
+  background: transparent;
+
+  font-family: Georgia, serif;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* BOX */
+
+.choice-box {
+
+  width: 100%;
+  height: 150px;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 25px;
+
+  background: rgba(255,255,255,.78);
+
+  border: 1px solid rgba(218,196,220,.72);
+
+  box-shadow:
+    0 10px 25px rgba(120,90,130,.11);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+/* TAP EFFECT */
+
+.choice:active .choice-box {
+
+  transform: scale(.93);
+
+  box-shadow:
+    0 5px 13px rgba(120,90,130,.08);
+}
+
+
+/* ICON */
+
+.icon {
+
+  font-size: 42px;
+
+  line-height: 1;
+
+  margin-bottom: 13px;
+}
+
+
+/* LABEL */
+
+.label {
+
+  font-size: 14px;
+
+  color: #805f82;
+}
+
+
+/* SMALL TEXT */
+
+.sub {
+
+  margin-top: 5px;
+
+  font-size: 11px;
+
+  opacity: .58;
+}
+
+
+/* FINISH */
+
+.finish-area {
+
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  text-align: center;
+
+  margin-top: 25px;
+}
+
+.finish-text {
+
+  margin-bottom: 12px;
+
+  font-size: 12px;
+
+  opacity: .62;
+}
+
+.finish-button {
+
+  border: none;
+
+  border-radius: 25px;
+
+  padding: 12px 22px;
+
+  background: rgba(255,255,255,.9);
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  box-shadow:
+    0 7px 18px rgba(120,90,130,.11);
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.finish-button:active {
+
+  transform: scale(.94);
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width:360px) {
+
+  .choices {
+    gap: 11px;
+  }
+
+  .choice-box {
+    height: 140px;
+  }
+
+  .choice {
+    min-height: 140px;
+  }
+
+  .icon {
+    font-size: 37px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main class="page">
+
+
+<!-- DECORATIONS -->
+
+<div class="decor decor-one">✦</div>
+<div class="decor decor-two">✧</div>
+<div class="decor decor-three">♡</div>
+<div class="decor decor-four">✦</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+  <div class="small">
+    one last little detour...
+  </div>
+
+  <h1>
+    Pick One From These
+  </h1>
+
+  <div class="line"></div>
+
+  <p>
+    Go on. Tap one. 👀
+  </p>
+
+</header>
+
+
+<!-- FOUR CHOICES -->
+
+<section class="choices">
+
+
+  <!-- CUTE -->
+
+  <button
+    class="choice"
+    type="button"
+    onclick="window.location.href='page10.html';"
+  >
+
+    <div class="choice-box">
+
+      <div class="icon">
+        🌷
+      </div>
+
+      <div class="label">
+        Cute
+      </div>
+
+      <div class="sub">
+        something sweet
+      </div>
+
+    </div>
+
+  </button>
+
+
+  <!-- CHAOS -->
+
+  <button
+    class="choice"
+    type="button"
+    onclick="window.location.href='page11.html';"
+  >
+
+    <div class="choice-box">
+
+      <div class="icon">
+        💀
+      </div>
+
+      <div class="label">
+        Chaos
+      </div>
+
+      <div class="sub">
+        bad idea probably
+      </div>
+
+    </div>
+
+  </button>
+
+
+  <!-- SUSPICIOUS -->
+
+  <button
+    class="choice"
+    type="button"
+    onclick="window.location.href='page12.html';"
+  >
+
+    <div class="choice-box">
+
+      <div class="icon">
+        🤫
+      </div>
+
+      <div class="label">
+        Suspicious
+      </div>
+
+      <div class="sub">
+        I'm curious...
+      </div>
+
+    </div>
+
+  </button>
+
+
+  <!-- MYSTERY -->
+
+  <button
+    class="choice"
+    type="button"
+    onclick="window.location.href='page13.html';"
+  >
+
+    <div class="choice-box">
+
+      <div class="icon">
+        🎁
+      </div>
+
+      <div class="label">
+        Mystery
+      </div>
+
+      <div class="sub">
+        reveal it
+      </div>
+
+    </div>
+
+  </button>
+
+
+</section>
+
+
+<!-- FINAL BUTTON -->
+
+<section class="finish-area">
+
+  <div class="finish-text">
+    Seen enough? 👀
+  </div>
+
+  <button
+    class="finish-button"
+    type="button"
+    onclick="window.location.href='page14.html';"
+  >
+
+    I've seen everything → 💗
+
+  </button>
+
+</section>
+
+
+</main>
+
+</body>
+</html>

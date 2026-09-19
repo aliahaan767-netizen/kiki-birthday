@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Choose Your Surprise 💗</title>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+      font-family: Georgia, serif;
+      overflow: hidden;
+    }
+
+
+    .choice-page {
+
+      min-height: 100vh;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          #fffafd 0%,
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 85% 25%,
+          #eee3ff 0%,
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 50% 100%,
+          #ffe8f3 0%,
+          transparent 40%
+        ),
+
+        linear-gradient(
+          135deg,
+          #fff7fa,
+          #f7efff
+        );
+
+      color: #705b72;
+    }
+
+
+    /* floating decorations */
+
+    .decoration {
+      position: absolute;
+
+      color: #cfa6ce;
+
+      pointer-events: none;
+
+      animation: float 4s ease-in-out infinite;
+    }
+
+
+    .heart {
+      top: 15%;
+      right: 12%;
+
+      font-size: 34px;
+    }
+
+
+    .sparkle {
+      top: 30%;
+      left: 12%;
+
+      font-size: 22px;
+
+      animation-delay: 1s;
+    }
+
+
+    .flower {
+      bottom: 20%;
+      left: 10%;
+
+      font-size: 28px;
+
+      animation-delay: 1.5s;
+    }
+
+
+    .star {
+      bottom: 27%;
+      right: 12%;
+
+      font-size: 22px;
+
+      animation-delay: 0.5s;
+    }
+
+
+    /* main content */
+
+    .content {
+
+      width: 90%;
+      max-width: 420px;
+
+      text-align: center;
+
+      position: relative;
+      z-index: 2;
+    }
+
+
+    .tiny {
+
+      font-size: 14px;
+
+      letter-spacing: 3px;
+
+      opacity: 0.65;
+
+      margin-bottom: 24px;
+    }
+
+
+    h1 {
+
+      font-size: 43px;
+
+      line-height: 1.08;
+
+      font-weight: normal;
+
+      color: #805f82;
+
+      margin-bottom: 18px;
+    }
+
+
+    .message {
+
+      font-size: 18px;
+
+      line-height: 1.5;
+
+      color: #655766;
+
+      margin-bottom: 32px;
+    }
+
+
+    /* choices */
+
+    .choices {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 15px;
+
+      width: 100%;
+    }
+
+
+    .choice {
+
+      border: none;
+
+      min-height: 70px;
+
+      border-radius: 24px;
+
+      background: rgba(
+        255,
+        255,
+        255,
+        0.78
+      );
+
+      color: #775d76;
+
+      font-family: Georgia, serif;
+
+      font-size: 16px;
+
+      box-shadow:
+        0 10px 30px
+        rgba(
+          130,
+          90,
+          140,
+          0.12
+        );
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+
+    .choice:active {
+
+      transform: scale(0.94);
+
+    }
+
+
+    .choice:hover {
+
+      background: rgba(
+        255,
+        255,
+        255,
+        0.95
+      );
+
+      box-shadow:
+        0 12px 32px
+        rgba(
+          130,
+          90,
+          140,
+          0.17
+        );
+    }
+
+
+    /* result */
+
+    .result {
+
+      margin-top: 26px;
+
+      min-height: 90px;
+    }
+
+
+    #resultText {
+
+      font-size: 16px;
+
+      line-height: 1.5;
+
+      color: #9b6584;
+
+      margin-bottom: 16px;
+    }
+
+
+    #continue {
+
+      border: none;
+
+      padding: 14px 28px;
+
+      border-radius: 30px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.9
+        );
+
+      color: #805f82;
+
+      font-family: Georgia, serif;
+
+      font-size: 16px;
+
+      box-shadow:
+        0 9px 25px
+        rgba(
+          130,
+          90,
+          140,
+          0.13
+        );
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform: translateY(10px);
+
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    }
+
+
+    #continue.show {
+
+      opacity: 1;
+
+      pointer-events: auto;
+
+      transform: translateY(0);
+    }
+
+
+    /* animation */
+
+    @keyframes float {
+
+      0%, 100% {
+
+        transform: translateY(0);
+
+        opacity: 0.5;
+      }
+
+      50% {
+
+        transform: translateY(-12px);
+
+        opacity: 1;
+      }
+
+    }
+
+
+    /* small phone adjustment */
+
+    @media (max-width: 380px) {
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .message {
+        font-size: 17px;
+      }
+
+      .choice {
+        min-height: 64px;
+        font-size: 15px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <main class="choice-page">
+
+
+    <div class="decoration heart">♡</div>
+
+    <div class="decoration sparkle">✦</div>
+
+    <div class="decoration flower">✿</div>
+
+    <div class="decoration star">✧</div>
+
+
+    <div class="content">
+
+
+      <p class="tiny">
+        okay, birthday girl... 🎀
+      </p>
+
+
+      <h1>
+        Choose Your<br>
+        Surprise
+      </h1>
+
+
+      <p class="message">
+        Pick whichever one your heart says. 💗
+      </p>
+
+
+      <div class="choices">
+
+
+        <button
+          class="choice"
+          id="sweet">
+
+          🌷 Sweet
+
+        </button>
+
+
+        <button
+          class="choice"
+          id="funny">
+
+          😂 Funny
+
+        </button>
+
+
+        <button
+          class="choice"
+          id="secret">
+
+          🤫 Secret
+
+        </button>
+
+
+        <button
+          class="choice"
+          id="random">
+
+          ✨ Surprise Me
+
+        </button>
+
+
+      </div>
+
+
+      <div class="result">
+
+        <p id="resultText"></p>
+
+
+        <button id="continue">
+
+          Continue → 🎂
+
+        </button>
+
+      </div>
+
+
+    </div>
+
+
+  </main>
+
+
+  <script>
+
+    const resultText =
+      document.getElementById("resultText");
+
+    const continueButton =
+      document.getElementById("continue");
+
+
+    document
+      .getElementById("sweet")
+      .addEventListener("click", function() {
+
+        resultText.textContent =
+          "Aww 🥹💗 You picked the sweet one. You deserve all the happiness today.";
+
+        continueButton.classList.add("show");
+
+      });
+
+
+    document
+      .getElementById("funny")
+      .addEventListener("click", function() {
+
+        resultText.textContent =
+          "HAHAHA 😭 You chose chaos. Honestly... very birthday-girl behaviour.";
+
+        continueButton.classList.add("show");
+
+      });
+
+
+    document
+      .getElementById("secret")
+      .addEventListener("click", function() {
+
+        resultText.textContent =
+          "🤫 Psst... there's a little secret waiting for you later...";
+
+        continueButton.classList.add("show");
+
+      });
+
+
+    document
+      .getElementById("random")
+      .addEventListener("click", function() {
+
+        const surprises = [
+
+          "✨ The universe has chosen something VERY cute for you.",
+
+          "🎀 Surprise! You picked the mystery route.",
+
+          "💗 Plot twist: you have no idea what's coming.",
+
+          "🌷 Okayyy, let's see where this takes you..."
+
+        ];
+
+
+        const random =
+          Math.floor(
+            Math.random() * surprises.length
+          );
+
+
+        resultText.textContent =
+          surprises[random];
+
+        continueButton.classList.add("show");
+
+      });
+
+
+    continueButton.addEventListener(
+      "click",
+      function() {
+
+        window.location.href =
+          "page6.html";
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>

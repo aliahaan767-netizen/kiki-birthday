@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Letter 💌</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: #fff7fb;
+  color: #705b72;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.letter-page {
+  min-height: 100vh;
+  padding: 55px 0 80px;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      #fffafd 0%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      #eee4ff 0%,
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      #ffe5f1 0%,
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #fff7fa,
+      #f7efff
+    );
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.decoration {
+  position: absolute;
+  color: #cda2cb;
+  pointer-events: none;
+  animation: float 4s ease-in-out infinite;
+}
+
+.heart-one {
+  top: 10%;
+  left: 9%;
+  font-size: 30px;
+}
+
+.heart-two {
+  top: 43%;
+  right: 8%;
+  font-size: 26px;
+  animation-delay: 1s;
+}
+
+.sparkle-one {
+  top: 25%;
+  right: 14%;
+  font-size: 20px;
+  animation-delay: .6s;
+}
+
+.sparkle-two {
+  bottom: 18%;
+  left: 11%;
+  font-size: 18px;
+  animation-delay: 1.4s;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.letter-content {
+  width: 90%;
+  max-width: 430px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.tiny {
+  font-size: 13px;
+  letter-spacing: 3px;
+  opacity: .65;
+  margin-bottom: 20px;
+}
+
+.intro-title {
+  font-size: 39px;
+  line-height: 1.15;
+  font-weight: normal;
+  color: #805f82;
+  margin-bottom: 12px;
+}
+
+.intro-text {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #776679;
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-area {
+  height: 230px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.envelope {
+  width: 240px;
+  height: 155px;
+
+  position: relative;
+  cursor: pointer;
+
+  filter:
+    drop-shadow(
+      0 15px 20px
+      rgba(130, 90, 140, .16)
+    );
+
+  transition: transform .3s ease;
+}
+
+.envelope:active {
+  transform: scale(.96);
+}
+
+
+/* ENVELOPE BODY */
+
+.envelope-body {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 240px;
+  height: 145px;
+
+  background: #fffdfd;
+
+  border-radius: 8px;
+
+  border: 1px solid #eadce8;
+
+  overflow: hidden;
+
+  z-index: 2;
+}
+
+
+/* FOLDS */
+
+.envelope-body::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 85px solid #f7e8f0;
+}
+
+.envelope-body::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border-left: 120px solid #f2e2ed;
+  border-right: 120px solid transparent;
+  border-top: 75px solid transparent;
+}
+
+
+/* FLAP */
+
+.envelope-flap {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-top: 82px solid #f5dce8;
+
+  transform-origin: top center;
+
+  z-index: 5;
+
+  transition: transform .8s ease;
+}
+
+
+/* HEART SEAL */
+
+.seal {
+  position: absolute;
+
+  top: 68px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  background: #f3b5ca;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 19px;
+
+  z-index: 7;
+
+  transition: opacity .3s ease;
+}
+
+
+/* OPEN */
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope.open .seal {
+  opacity: 0;
+}
+
+
+/* TAP TEXT */
+
+.tap-message {
+  font-size: 15px;
+  color: #96627f;
+  margin-top: 8px;
+
+  animation:
+    gentlePulse 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-paper {
+  width: 100%;
+  max-width: 400px;
+
+  margin: 30px auto 0;
+
+  padding: 32px 25px 35px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffefa,
+      #fff9fc
+    );
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(120, 80, 120, .12);
+
+  text-align: left;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  pointer-events: none;
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+  position: relative;
+}
+
+
+/* LITTLE HEART */
+
+.letter-paper::before {
+  content: "♡";
+
+  position: absolute;
+
+  top: 12px;
+  right: 16px;
+
+  color: #e2b5ce;
+
+  font-size: 20px;
+}
+
+
+/* SHOW LETTER */
+
+.letter-paper.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+/* LETTER HEADING */
+
+.letter-paper h2 {
+  text-align: center;
+
+  font-size: 27px;
+  font-weight: normal;
+
+  color: #805f82;
+
+  margin-bottom: 25px;
+}
+
+
+/* LETTER TEXT */
+
+.letter-paper p {
+  font-size: 15.5px;
+  line-height: 1.75;
+
+  color: #665768;
+
+  margin-bottom: 18px;
+}
+
+
+/* IMPORTANT/FUNNY LINES */
+
+.letter-paper .bold {
+  color: #93607e;
+
+  font-weight: bold;
+
+  text-align: center;
+
+  font-size: 17px;
+
+  margin: 22px 0;
+}
+
+
+/* =========================
+   NEXT BUTTON
+========================= */
+
+.next-page {
+  display: block;
+
+  margin: 30px auto 0;
+
+  padding: 15px 25px;
+
+  border: none;
+  border-radius: 30px;
+
+  background: rgba(255,255,255,.92);
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+  font-size: 16px;
+
+  box-shadow:
+    0 9px 25px
+    rgba(130,90,140,.13);
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+}
+
+.next-page.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float {
+
+  0%, 100% {
+    transform: translateY(0);
+    opacity: .5;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+
+}
+
+@keyframes gentlePulse {
+
+  0%, 100% {
+    opacity: .6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+
+  .intro-title {
+    font-size: 35px;
+  }
+
+  .envelope {
+    transform: scale(.9);
+  }
+
+  .letter-paper {
+    padding: 28px 20px 32px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main class="letter-page">
+
+
+  <!-- DECORATIONS -->
+
+  <div class="decoration heart-one">♡</div>
+
+  <div class="decoration heart-two">♡</div>
+
+  <div class="decoration sparkle-one">✦</div>
+
+  <div class="decoration sparkle-two">✧</div>
+
+
+  <div class="letter-content">
+
+
+    <!-- INTRO -->
+
+    <p class="tiny">
+      a little something for you ♡
+    </p>
+
+
+    <h1 class="intro-title">
+      A Letter<br>
+      For Kiki 💌
+    </h1>
+
+
+    <p class="intro-text">
+      There's something inside...
+      <br>
+      tap the envelope. ✨
+    </p>
+
+
+    <!-- =====================
+         ENVELOPE
+    ====================== -->
+
+    <div class="envelope-area">
+
+      <div
+        class="envelope"
+        id="envelope">
+
+        <div class="envelope-body"></div>
+
+        <div class="envelope-flap"></div>
+
+        <div class="seal">
+          ♡
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <p class="tap-message" id="tapMessage">
+      Tap me 💌
+    </p>
+
+
+    <!-- =====================
+         LETTER
+    ====================== -->
+
+    <article
+      class="letter-paper"
+      id="letterPaper">
+
+
+      <h2>
+        Dear Kiki, ♡
+      </h2>
+
+
+      <p>
+        Do you remember the first day you came
+        to our school?
+      </p>
+
+
+      <p>
+        Because I definitely do. 😭
+      </p>
+
+
+      <p>
+        You were alone, going upstairs to your
+        class, while I was coming down the stairs
+        with some of my friends.
+      </p>
+
+
+      <p>
+        And when I saw you, I genuinely thought:
+      </p>
+
+
+      <p class="bold">
+        “Arey, ye toh ekdum bachchi lag rahi hai.
+        Ye toh Class 5 ya 6 mein hogi.
+        New hai, pakka.” 😭💀
+      </p>
+
+
+      <p>
+        You were wearing that sky-blue floral
+        frock with jeans and sandals, your
+        spectacles, and your ponytail.
+      </p>
+
+
+      <p>
+        You looked so decent and innocent that
+        I was completely convinced you were
+        some tiny new kid. 😭
+      </p>
+
+
+      <p>
+        And then later, after assembly, I went
+        upstairs to my class and saw you sitting
+        there.
+      </p>
+
+
+      <p class="bold">
+        In my class. 💀
+      </p>
+
+
+      <p>
+        I was like… BRO. 😭
+      </p>
+
+
+      <p>
+        Turns out you were actually my classmate.
+        And looking back now, that first impression
+        was absolutely hilarious because after
+        getting to know you, I discovered something
+        very important:
+      </p>
+
+
+      <p class="bold">
+        You were NOT innocent. 💀
+      </p>
+
+
+      <p>
+        Like, girl, the character development
+        was insane. 😭
+      </p>
+
+
+      <p>
+        Anyway, on your first, second, and third
+        day, we didn't really know each other
+        properly.
+      </p>
+
+
+      <p>
+        We were basically just two people existing
+        in the same classroom.
+      </p>
+
+
+      <p>
+        And then somehow, we ended up sitting
+        on the same desk.
+      </p>
+
+
+      <p>
+        And that's literally where everything
+        started.
+      </p>
+
+
+      <p>
+        First we became friends. Then we started
+        talking more, spending more time together,
+        trusting each other more, sharing random
+        things, laughing over the dumbest stuff...
+      </p>
+
+
+      <p class="bold">
+        And slowly, without even realizing when
+        it happened — we became best friends. ♡
+      </p>
+
+
+      <p>
+        And honestly? That's kinda crazy when
+        you think about it.
+      </p>
+
+
+      <p>
+        A girl I initially thought was a Class 5
+        kid somehow became my best friend. 😭
+      </p>
+
+
+      <p>
+        Then came Class 9, and you had to leave
+        for Jamia.
+      </p>
+
+
+      <p class="bold">
+        And that was a BIG blunder for me. 😭
+      </p>
+
+
+      <p>
+        You were the one person I could do
+        practically everything with during
+        classes.
+      </p>
+
+
+      <p>
+        When you left, everything suddenly felt
+        really different.
+      </p>
+
+
+      <p>
+        I felt really left out after that, and
+        I genuinely missed having you around.
+      </p>
+
+
+      <p>
+        Even now, whenever you come here and
+        I get to meet you, I get SO happy. 🥹💗
+      </p>
+
+
+      <p>
+        Sometimes I'm busy and can't pick up
+        your calls, but that doesn't mean I don't
+        remember you.
+      </p>
+
+
+      <p>
+        I still miss you, and whenever we actually
+        get to talk or meet, it makes me happy.
+      </p>
+
+
+      <p>
+        One thing I really like about you is that
+        whenever I'm sad and talk to you, you
+        always try to make me feel better.
+      </p>
+
+
+      <p>
+        Although...
+      </p>
+
+
+      <p class="bold">
+        I have one serious complaint. 😭
+      </p>
+
+
+      <p>
+        You somehow manage to get EVERYTHING
+        out of me.
+      </p>
+
+
+      <p>
+        I'll literally think,
+        “Nope. I'm not telling her this.”
+      </p>
+
+
+      <p>
+        And somehow five minutes later—
+      </p>
+
+
+      <p class="bold">
+        I'm telling you everything. 💀
+      </p>
+
+
+      <p>
+        Like HOW???
+      </p>
+
+
+      <p>
+        But okay, I admit it. You know me pretty well.
+      </p>
+
+
+      <p>
+        Although there are still plenty of things
+        you don't know about me...
+      </p>
+
+
+      <p>
+        And some secrets are staying
+        <strong>classified information.</strong> 🤭
+      </p>
+
+
+      <p>
+        One memory I still remember is our
+        Class 9 one-day trip.
+      </p>
+
+
+      <p>
+        Honestly, calling it a “trip” is already
+        being generous because our school really
+        did the absolute bare minimum. 😭
+      </p>
+
+
+      <p>
+        But somehow, we still had SO much fun.
+      </p>
+
+
+      <p>
+        You made chicken noodles, we ate so many
+        things, and we ate so much that when we
+        finally got home, we didn't even need lunch. 💀
+      </p>
+
+
+      <p>
+        It wasn't some fancy trip.
+      </p>
+
+
+      <p>
+        It wasn't even the best-organized trip.
+      </p>
+
+
+      <p>
+        But I still remember it because we had
+        so much fun that day. ♡
+      </p>
+
+
+      <p>
+        And there's one thing I want to say:
+      </p>
+
+
+      <p>
+        Bas khush reh aur jo goals hain,
+        woh complete kar.
+      </p>
+
+
+      <p>
+        I don't know what the future is going
+        to look like. Maybe we'll be busy,
+        maybe we'll be far away, maybe we'll
+        talk less sometimes.
+      </p>
+
+
+      <p>
+        But I really hope that no matter how
+        much life changes, we'll still randomly
+        text each other:
+      </p>
+
+
+      <p class="bold">
+        “Hi, kaisi ho?”
+        <br><br>
+        “Thik hoon, tum kaisi ho?”
+      </p>
+
+
+      <p>
+        Because that's just us. ♡
+      </p>
+
+
+      <p>
+        We may not sit on the same desk anymore.
+        We may not spend every day together like
+        we used to.
+      </p>
+
+
+      <p>
+        But somehow, we're still here.
+      </p>
+
+
+      <p class="bold">
+        Happy Birthday, Kiki! 🎂💗
+      </p>
+
+
+      <p>
+        Bas khush reh, apne goals complete kar,
+        aur aise hi reh.
+      </p>
+
+
+      <p class="bold">
+        And please continue pretending you're
+        innocent even though we both know
+        the truth. 💀😭
+      </p>
+
+
+      <p class="bold">
+        Love you, bestie. ♡
+      </p>
+
+
+      <p style="text-align:right; margin-top:30px;">
+        — Your best friend 💌
+      </p>
+
+
+    </article>
+
+
+    <!-- NEXT PAGE -->
+
+    <button
+      class="next-page"
+      id="nextPage">
+
+      ONE MORE THING → ✨
+
+    </button>
+
+
+  </div>
+
+</main>
+
+
+<script>
+
+
+/* ELEMENTS */
+
+const envelope =
+  document.getElementById("envelope");
+
+const letterPaper =
+  document.getElementById("letterPaper");
+
+const tapMessage =
+  document.getElementById("tapMessage");
+
+const nextPage =
+  document.getElementById("nextPage");
+
+
+/* OPEN ENVELOPE */
+
+envelope.addEventListener("click", function() {
+
+  envelope.classList.add("open");
+
+  tapMessage.style.display = "none";
+
+  setTimeout(function() {
+
+    letterPaper.classList.add("show");
+
+  }, 500);
+
+});
+
+
+/* SHOW NEXT BUTTON NEAR END */
+
+window.addEventListener("scroll", function() {
+
+  if (
+    letterPaper.classList.contains("show") &&
+    letterPaper.getBoundingClientRect().bottom
+      < window.innerHeight + 100
+  ) {
+
+    nextPage.classList.add("show");
+
+  }
+
+});
+
+
+/* GO TO PAGE 8 */
+
+nextPage.addEventListener("click", function() {
+
+  window.location.href = "page8.html";
+
+});
+
+</script>
+
+</body>
+</html>

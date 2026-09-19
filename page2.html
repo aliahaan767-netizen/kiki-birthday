@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kiki 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+}
+
+.question-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 15% 15%, #fffafd 0%, transparent 30%),
+    radial-gradient(circle at 85% 75%, #eee2ff 0%, transparent 32%),
+    linear-gradient(135deg, #fff7fa, #f8f0ff);
+
+  color: #705b72;
+}
+
+.content {
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  padding: 35px 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.small-text {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+  opacity: 0.7;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: normal;
+  color: #805f82;
+  margin-bottom: 18px;
+}
+
+.big-heart {
+  font-size: 70px;
+  color: #c49ac8;
+  margin: 10px 0 20px;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.message {
+  font-size: 19px;
+  margin-bottom: 28px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  border: none;
+  padding: 16px 22px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.yes-button {
+  background: rgba(255,255,255,0.82);
+  color: #765878;
+  box-shadow: 0 8px 25px rgba(120,90,130,0.15);
+}
+
+.no-button {
+  background: rgba(255,255,255,0.62);
+  color: #8b6d88;
+}
+
+.buttons button:active {
+  transform: scale(0.94);
+}
+
+#reaction {
+  margin-top: 22px;
+  min-height: 25px;
+  font-size: 16px;
+  color: #a25f83;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="question-page">
+
+  <div class="content">
+
+    <p class="small-text">one tiny question ♡</p>
+
+    <h1>Okay Kiki...</h1>
+
+    <div class="big-heart">♡</div>
+
+    <p class="message">
+      Will you accept this little gift?
+    </p>
+
+    <div class="buttons">
+
+      <button class="yes-button"
+        onclick="window.location.href='page3.html'">
+        Yes, of course 💕
+      </button>
+
+      <button class="no-button" id="noButton">
+        Nope 🙃
+      </button>
+
+    </div>
+
+    <p id="reaction"></p>
+
+  </div>
+
+</main>
+
+<script>
+const noButton = document.getElementById("noButton");
+const reaction = document.getElementById("reaction");
+
+noButton.addEventListener("click", function() {
+  reaction.textContent = "Excuse me??? 😭 Try again!";
+  noButton.textContent = "Try again ♡";
+});
+</script>
+
+</body>
+</html>

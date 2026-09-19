@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Uh Oh... 👀</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 45px 20px;
+
+  background:
+
+    radial-gradient(
+      circle at 15% 15%,
+      #ffffff 0%,
+      rgba(255,255,255,.55) 18%,
+      transparent 38%
+    ),
+
+    radial-gradient(
+      circle at 85% 20%,
+      #f7e4ff 0%,
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 10% 85%,
+      #ffe1ed 0%,
+      transparent 36%
+    ),
+
+    radial-gradient(
+      circle at 90% 85%,
+      #e8e0ff 0%,
+      transparent 35%
+    ),
+
+    linear-gradient(
+      135deg,
+      #fff7fb,
+      #f8efff 48%,
+      #fff3f7
+    );
+
+  color: #705b72;
+
+}
+
+
+/* =========================
+   SOFT BACKGROUND BLOBS
+========================= */
+
+.blob {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(3px);
+
+  pointer-events: none;
+
+  opacity: .55;
+
+  animation:
+    blobFloat 7s ease-in-out infinite;
+
+}
+
+.blob-one {
+
+  width: 150px;
+  height: 150px;
+
+  top: -40px;
+  left: -45px;
+
+  background:
+    rgba(255,201,220,.32);
+
+}
+
+.blob-two {
+
+  width: 130px;
+  height: 130px;
+
+  right: -35px;
+  bottom: 15%;
+
+  background:
+    rgba(206,186,255,.30);
+
+  animation-delay: 1.5s;
+
+}
+
+.blob-three {
+
+  width: 90px;
+  height: 90px;
+
+  left: 5%;
+  bottom: 7%;
+
+  background:
+    rgba(255,226,184,.24);
+
+  animation-delay: 3s;
+
+}
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.decoration {
+
+  position: absolute;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  animation:
+    float 4s ease-in-out infinite;
+
+}
+
+
+.heart-one {
+
+  top: 13%;
+  left: 10%;
+
+  font-size: 31px;
+
+  color: #d99dbb;
+
+}
+
+
+.heart-two {
+
+  bottom: 16%;
+  right: 10%;
+
+  font-size: 25px;
+
+  color: #c7a6d5;
+
+  animation-delay: 1s;
+
+}
+
+
+.flower-one {
+
+  top: 25%;
+  left: 7%;
+
+  font-size: 20px;
+
+  color: #d9a5bd;
+
+  animation-delay: .7s;
+
+}
+
+
+.flower-two {
+
+  bottom: 27%;
+  right: 7%;
+
+  font-size: 23px;
+
+  color: #bfa1d0;
+
+  animation-delay: 1.8s;
+
+}
+
+
+.star-one {
+
+  top: 18%;
+  right: 15%;
+
+  font-size: 21px;
+
+  color: #c9a3cc;
+
+  animation-delay: .4s;
+
+}
+
+
+.star-two {
+
+  bottom: 30%;
+  left: 13%;
+
+  font-size: 17px;
+
+  color: #d7a7c0;
+
+  animation-delay: 1.2s;
+
+}
+
+
+.star-three {
+
+  top: 43%;
+  right: 7%;
+
+  font-size: 10px;
+
+  color: #bca4cb;
+
+  animation-delay: 2s;
+
+}
+
+
+.dot-one {
+
+  top: 32%;
+  left: 20%;
+
+  font-size: 9px;
+
+  color: #dca9bf;
+
+}
+
+
+.dot-two {
+
+  bottom: 20%;
+  right: 23%;
+
+  font-size: 8px;
+
+  color: #bca6d0;
+
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+
+  width: 100%;
+
+  max-width: 420px;
+
+  text-align: center;
+
+  position: relative;
+
+  z-index: 5;
+
+}
+
+
+.tiny {
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+
+  opacity: .65;
+
+  margin-bottom: 17px;
+
+}
+
+
+h1 {
+
+  font-size: 40px;
+
+  line-height: 1.15;
+
+  font-weight: normal;
+
+  color: #805f82;
+
+  margin-bottom: 12px;
+
+}
+
+
+.intro {
+
+  font-size: 17px;
+
+  line-height: 1.55;
+
+  color: #776679;
+
+  margin-bottom: 18px;
+
+}
+
+
+/* =========================
+   CARD AREA
+========================= */
+
+.card-area {
+
+  width: 100%;
+
+  height: 370px;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  perspective: 1200px;
+
+}
+
+
+/* =========================
+   FLIP CARD
+========================= */
+
+.flip-card {
+
+  width: 255px;
+
+  height: 310px;
+
+  position: relative;
+
+  cursor: pointer;
+
+  perspective: 1200px;
+
+}
+
+
+.card-inner {
+
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 1s
+    cubic-bezier(.2,.75,.2,1);
+
+}
+
+
+.flip-card.flipped
+.card-inner {
+
+  transform:
+    rotateY(180deg);
+
+}
+
+
+/* =========================
+   CARD SIDES
+========================= */
+
+.card-front,
+.card-back {
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+
+  backface-visibility: hidden;
+
+  -webkit-backface-visibility: hidden;
+
+}
+
+
+/* =========================
+   FRONT CARD
+========================= */
+
+.card-front {
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffefa,
+      #fff8fb
+    );
+
+  padding: 14px;
+
+  transform:
+    rotate(-2deg);
+
+  border:
+    2px solid
+    #eadce7;
+
+  box-shadow:
+
+    0 20px 38px
+    rgba(105,75,115,.22),
+
+    0 5px 10px
+    rgba(105,75,115,.10);
+
+}
+
+
+/* inner card border */
+
+.front-content {
+
+  width: 100%;
+  height: 100%;
+
+  border:
+    1px dashed
+    #dfc9dc;
+
+  border-radius: 5px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 25px;
+
+}
+
+
+.front-icon {
+
+  font-size: 43px;
+
+  margin-bottom: 17px;
+
+}
+
+
+.front-content h2 {
+
+  font-size: 22px;
+
+  font-weight: normal;
+
+  color: #805f82;
+
+  margin-bottom: 10px;
+
+}
+
+
+.front-content p {
+
+  font-size: 15px;
+
+  line-height: 1.55;
+
+  color: #8b7489;
+
+}
+
+
+/* =========================
+   BACK — PHOTO
+========================= */
+
+.card-back {
+
+  background:
+    #fffdfb;
+
+  padding: 13px;
+
+  transform:
+    rotateY(180deg)
+    rotate(2deg);
+
+  border:
+    2px solid
+    #eadce7;
+
+  box-shadow:
+
+    0 20px 38px
+    rgba(105,75,115,.22);
+
+}
+
+
+.photo-frame {
+
+  width: 100%;
+  height: 100%;
+
+  border:
+    1px solid
+    #eadce7;
+
+  padding: 10px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+
+.photo-frame img {
+
+  width: 100%;
+
+  height: 215px;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 3px;
+
+}
+
+
+.photo-caption {
+
+  margin-top: 15px;
+
+  font-size: 16px;
+
+  line-height: 1.4;
+
+  color: #805f82;
+
+  text-align: center;
+
+}
+
+
+/* =========================
+   REACTION
+========================= */
+
+.reaction {
+
+  min-height: 75px;
+
+  margin-top: -3px;
+
+  opacity: 0;
+
+  transform:
+    translateY(12px);
+
+  transition:
+
+    opacity .6s ease,
+
+    transform .6s ease;
+
+}
+
+
+.reaction.show {
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+}
+
+
+.reaction-main {
+
+  font-size: 20px;
+
+  color: #93617e;
+
+  margin-bottom: 8px;
+
+}
+
+
+.reaction-small {
+
+  font-size: 14px;
+
+  color: #806b80;
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================
+   NEXT BUTTON
+========================= */
+
+.next-button {
+
+  margin-top: 13px;
+
+  border: none;
+
+  padding: 15px 27px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255,255,255,.88);
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+
+  box-shadow:
+    0 9px 25px
+    rgba(120,80,130,.13);
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform:
+    translateY(10px);
+
+  transition:
+
+    opacity .5s ease,
+
+    transform .5s ease;
+
+}
+
+
+.next-button.show {
+
+  opacity: 1;
+
+  pointer-events: auto;
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float {
+
+  0%,100% {
+
+    transform:
+      translateY(0);
+
+    opacity: .55;
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-9px);
+
+    opacity: 1;
+
+  }
+
+}
+
+
+@keyframes blobFloat {
+
+  0%,100% {
+
+    transform:
+      translate(0,0);
+
+  }
+
+  50% {
+
+    transform:
+      translate(8px,-12px);
+
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width:380px) {
+
+  h1 {
+
+    font-size: 36px;
+
+  }
+
+  .flip-card {
+
+    width: 235px;
+
+    height: 295px;
+
+  }
+
+  .photo-frame img {
+
+    height: 202px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="page">
+
+
+<!-- =========================
+     BACKGROUND
+========================= -->
+
+<div class="blob blob-one"></div>
+
+<div class="blob blob-two"></div>
+
+<div class="blob blob-three"></div>
+
+
+<!-- =========================
+     DECORATIONS
+========================= -->
+
+<div class="decoration heart-one">
+  ♡
+</div>
+
+<div class="decoration heart-two">
+  ♡
+</div>
+
+<div class="decoration flower-one">
+  ✿
+</div>
+
+<div class="decoration flower-two">
+  ✿
+</div>
+
+<div class="decoration star-one">
+  ✦
+</div>
+
+<div class="decoration star-two">
+  ✧
+</div>
+
+<div class="decoration star-three">
+  ✦
+</div>
+
+<div class="decoration dot-one">
+  •
+</div>
+
+<div class="decoration dot-two">
+  •
+</div>
+
+
+<!-- =========================
+     CONTENT
+========================= -->
+
+<div class="content">
+
+
+<p class="tiny">
+
+  okay... I probably shouldn't do this 👀
+
+</p>
+
+
+<h1>
+
+  I Have Something
+  <br>
+  For You...
+
+</h1>
+
+
+<p class="intro">
+
+  You specifically told me to delete it.
+  <br>
+  Which is exactly why I kept it. 💀
+
+</p>
+
+
+<!-- =========================
+     CARD
+========================= -->
+
+<div class="card-area">
+
+
+<div
+  class="flip-card"
+  id="flipCard">
+
+
+<div class="card-inner">
+
+
+<!-- =========================
+     FRONT
+========================= -->
+
+<div class="card-front">
+
+
+<div class="front-content">
+
+
+<div class="front-icon">
+  👀
+</div>
+
+
+<h2>
+  What's inside?
+</h2>
+
+
+<p>
+
+  You already know what
+  this is about. 😭
+
+  <br><br>
+
+  Tap me.
+
+</p>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     BACK — PHOTO
+========================= -->
+
+<div class="card-back">
+
+
+<div class="photo-frame">
+
+
+<img
+  src="photos/photo21.jpg"
+  alt="A very suspicious photo of Kiki"
+>
+
+
+<p class="photo-caption">
+
+  Oh no... 😭💀
+
+</p>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     REACTION
+========================= -->
+
+<div
+  class="reaction"
+  id="reaction">
+
+
+<p class="reaction-main">
+
+  OH MY GOD 😭💀
+
+</p>
+
+
+<p class="reaction-small">
+
+  I know you told me to delete this.
+  <br>
+  But come on... I couldn't. 😭
+
+</p>
+
+
+</div>
+
+
+<!-- =========================
+     NEXT
+========================= -->
+
+<button
+  class="next-button"
+  id="nextButton">
+
+  Okay, okay... moving on → 👀
+
+</button>
+
+
+</div>
+
+
+</main>
+
+
+<script>
+
+
+const flipCard =
+  document.getElementById("flipCard");
+
+const reaction =
+  document.getElementById("reaction");
+
+const nextButton =
+  document.getElementById("nextButton");
+
+
+/* =========================
+   FLIP CARD
+========================= */
+
+flipCard.addEventListener(
+  "click",
+  function() {
+
+
+    if (
+      flipCard.classList.contains("flipped")
+    ) {
+
+      return;
+
+    }
+
+
+    flipCard.classList.add("flipped");
+
+
+    setTimeout(
+      function() {
+
+        reaction.classList.add("show");
+
+        nextButton.classList.add("show");
+
+      },
+      650
+    );
+
+
+  }
+);
+
+
+/* =========================
+   NEXT PAGE
+========================= */
+
+nextButton.addEventListener(
+  "click",
+  function() {
+
+    window.location.href =
+      "page9.html";
+
+  }
+);
+
+
+</script>
+
+
+</body>
+
+</html>

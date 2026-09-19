@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Little Thing 🤍</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+}
+
+.credit-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 18% 18%, #fff8fc 0%, transparent 30%),
+    radial-gradient(circle at 82% 75%, #eee3ff 0%, transparent 32%),
+    radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 50%),
+    linear-gradient(135deg, #fff4f8, #f7efff);
+
+  color: #6f5a72;
+}
+
+/* Soft dreamy decorations */
+
+.decoration {
+  position: absolute;
+  color: #c49ac8;
+  opacity: 0.65;
+  animation: float 4s ease-in-out infinite;
+}
+
+.star-one {
+  top: 15%;
+  left: 14%;
+  font-size: 25px;
+}
+
+.star-two {
+  top: 28%;
+  right: 13%;
+  font-size: 20px;
+  animation-delay: 1s;
+}
+
+.heart-one {
+  bottom: 22%;
+  left: 13%;
+  font-size: 28px;
+  animation-delay: 1.5s;
+}
+
+.heart-two {
+  bottom: 30%;
+  right: 15%;
+  font-size: 22px;
+  animation-delay: 2s;
+}
+
+.sparkle-one {
+  top: 48%;
+  left: 8%;
+  font-size: 16px;
+  animation-delay: 0.5s;
+}
+
+.sparkle-two {
+  top: 53%;
+  right: 9%;
+  font-size: 17px;
+  animation-delay: 2.5s;
+}
+
+/* Main content */
+
+.content {
+  width: 90%;
+  max-width: 390px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.heart {
+  font-size: 55px;
+  margin-bottom: 18px;
+  animation: gentlePulse 2.5s ease-in-out infinite;
+}
+
+.small-text {
+  font-size: 13px;
+  letter-spacing: 3px;
+  opacity: 0.65;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: normal;
+  color: #805f82;
+  margin-bottom: 22px;
+}
+
+.message {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #705d70;
+  margin-bottom: 30px;
+}
+
+.next-button {
+  border: none;
+  padding: 15px 27px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.84);
+
+  color: #765878;
+
+  font-family: Georgia, serif;
+  font-size: 16px;
+
+  box-shadow: 0 8px 25px rgba(120,90,130,0.15);
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.next-button:active {
+  transform: scale(0.94);
+}
+
+/* Animations */
+
+@keyframes float {
+
+  0%,100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+
+}
+
+@keyframes gentlePulse {
+
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<main class="credit-page">
+
+  <!-- Dreamy decorations -->
+
+  <div class="decoration star-one">✦</div>
+  <div class="decoration star-two">✧</div>
+  <div class="decoration heart-one">♡</div>
+  <div class="decoration heart-two">♡</div>
+  <div class="decoration sparkle-one">✦</div>
+  <div class="decoration sparkle-two">✧</div>
+
+  <div class="content">
+
+    <div class="heart">
+      ♡
+    </div>
+
+    <p class="small-text">
+      tiny credit note 🤍
+    </p>
+
+    <h1>
+      One little thing...
+    </h1>
+
+    <p class="message">
+      I took some help from ChatGPT to make this website.
+      <br><br>
+      I did the rest. ♡
+    </p>
+
+    <button
+      class="next-button"
+      onclick="window.location.href='page16.html'">
+      Okay... one last thing → 🎁
+    </button>
+
+  </div>
+
+</main>
+
+</body>
+</html>

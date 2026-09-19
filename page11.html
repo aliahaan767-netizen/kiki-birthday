@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chaos 💀</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #705b72;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.chaos-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  padding: 30px 18px 40px;
+
+  background:
+    radial-gradient(circle at 12% 10%, #fffafd 0%, transparent 30%),
+    radial-gradient(circle at 88% 20%, #f1e7ff 0%, transparent 32%),
+    radial-gradient(circle at 15% 88%, #ffeaf4 0%, transparent 35%),
+    linear-gradient(135deg, #fff6fa, #f8f0ff);
+}
+
+
+/* =========================
+   FLOATING DECOR
+========================= */
+
+.decor {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: .45;
+
+  animation: floatDecor 4s ease-in-out infinite;
+}
+
+.decor-one {
+  top: 9%;
+  left: 7%;
+  font-size: 18px;
+}
+
+.decor-two {
+  top: 15%;
+  right: 8%;
+  font-size: 15px;
+  animation-delay: 1s;
+}
+
+.decor-three {
+  bottom: 13%;
+  left: 8%;
+  font-size: 18px;
+  animation-delay: .5s;
+}
+
+.decor-four {
+  bottom: 18%;
+  right: 9%;
+  font-size: 16px;
+  animation-delay: 1.5s;
+}
+
+@keyframes floatDecor {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.chaos-header {
+  position: relative;
+  z-index: 5;
+
+  width: 92%;
+  max-width: 410px;
+
+  margin: 0 auto 22px;
+
+  text-align: center;
+}
+
+.chaos-small {
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: .58;
+  margin-bottom: 9px;
+}
+
+.chaos-header h1 {
+  margin: 0 0 8px;
+
+  font-size: 32px;
+  font-weight: normal;
+
+  color: #805f82;
+}
+
+.chaos-header p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chaos-line {
+  width: 42px;
+  height: 1px;
+
+  margin: 11px auto;
+
+  background: rgba(170,135,175,.4);
+}
+
+
+/* =========================
+   INTRO CARD
+========================= */
+
+.intro-card {
+  position: relative;
+  z-index: 10;
+
+  width: 92%;
+  max-width: 370px;
+
+  margin: 0 auto;
+
+  padding: 28px 20px;
+
+  text-align: center;
+
+  background: rgba(255,255,255,.82);
+
+  border: 1px solid rgba(218,196,220,.7);
+
+  border-radius: 27px;
+
+  box-shadow:
+    0 12px 30px rgba(120,90,130,.12);
+}
+
+.intro-icon {
+  font-size: 43px;
+
+  margin-bottom: 13px;
+
+  animation: tinyPop 2s ease-in-out infinite;
+}
+
+@keyframes tinyPop {
+
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+}
+
+.intro-card h2 {
+  margin: 0 0 10px;
+
+  font-size: 22px;
+
+  font-weight: normal;
+
+  color: #805f82;
+}
+
+.intro-card p {
+  margin: 0 auto 18px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  max-width: 290px;
+}
+
+.start-button {
+
+  border: none;
+
+  border-radius: 25px;
+
+  padding: 12px 22px;
+
+  background: rgba(255,255,255,.96);
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  box-shadow:
+    0 7px 18px rgba(120,90,130,.12);
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition: transform .2s ease;
+}
+
+.start-button:active {
+  transform: scale(.92);
+}
+
+
+/* =========================
+   GAME
+========================= */
+
+.game {
+  display: none;
+
+  width: 100%;
+}
+
+
+/* GAME TITLE */
+
+.game-title {
+  text-align: center;
+
+  margin: 4px auto 15px;
+}
+
+.game-title h2 {
+
+  margin: 0 0 5px;
+
+  font-size: 23px;
+
+  font-weight: normal;
+
+  color: #805f82;
+}
+
+.game-title p {
+
+  margin: 0;
+
+  font-size: 12px;
+
+  opacity: .63;
+}
+
+
+/* =========================
+   GAME BOX
+========================= */
+
+.play-area {
+
+  position: relative;
+
+  width: 92%;
+  max-width: 360px;
+
+  height: 330px;
+
+  margin: 0 auto;
+
+  border-radius: 30px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255,255,255,.72),
+      rgba(255,255,255,.38)
+    );
+
+  border: 1px solid rgba(218,196,220,.6);
+
+  box-shadow:
+    0 12px 28px rgba(120,90,130,.10),
+    inset 0 0 25px rgba(255,255,255,.45);
+
+  overflow: hidden;
+}
+
+
+/* LITTLE DECOR INSIDE GAME */
+
+.game-spark {
+  position: absolute;
+
+  pointer-events: none;
+
+  opacity: .45;
+
+  font-size: 15px;
+}
+
+.spark-a {
+  top: 13%;
+  left: 13%;
+}
+
+.spark-b {
+  top: 25%;
+  right: 15%;
+}
+
+.spark-c {
+  bottom: 20%;
+  left: 18%;
+}
+
+.spark-d {
+  bottom: 13%;
+  right: 13%;
+}
+
+
+/* =========================
+   POPPING EYES CARD
+========================= */
+
+.catch-card {
+
+  position: absolute;
+
+  width: 105px;
+  height: 105px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 27px;
+
+  background: rgba(255,255,255,.96);
+
+  box-shadow:
+    0 12px 25px rgba(120,90,130,.16);
+
+  font-family: Georgia, serif;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 10;
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    left .35s cubic-bezier(.2,.8,.2,1),
+    top .35s cubic-bezier(.2,.8,.2,1),
+    transform .16s ease;
+}
+
+.catch-card:active {
+
+  transform: scale(.82) rotate(-3deg);
+}
+
+
+/* POP ANIMATION */
+
+.catch-card.pop {
+
+  animation: cardPop .38s ease;
+}
+
+@keyframes cardPop {
+
+  0% {
+    transform: scale(.75);
+  }
+
+  45% {
+    transform: scale(1.12) rotate(2deg);
+  }
+
+  75% {
+    transform: scale(.94) rotate(-2deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* EYES */
+
+.catch-eyes {
+
+  font-size: 39px;
+
+  line-height: 1;
+
+  margin-bottom: 8px;
+}
+
+
+/* CARD TEXT */
+
+.catch-label {
+
+  font-size: 11px;
+
+  color: #805f82;
+}
+
+
+/* =========================
+   LEVEL / CHAOS INFO
+   BELOW THE BOX
+========================= */
+
+.level-area {
+
+  width: 92%;
+  max-width: 360px;
+
+  margin: 15px auto 0;
+
+  text-align: center;
+}
+
+
+/* LEVEL TEXT */
+
+.level-text {
+
+  margin-bottom: 7px;
+
+  font-size: 12px;
+
+  color: #805f82;
+
+  opacity: .75;
+}
+
+
+/* METER */
+
+.meter {
+
+  width: 100%;
+
+  height: 9px;
+
+  background: rgba(255,255,255,.72);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(218,196,220,.45);
+}
+
+.meter-fill {
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: 20px;
+
+  background: rgba(178,140,180,.68);
+
+  transition: width .35s ease;
+}
+
+
+/* REACTION BELOW LEVEL */
+
+.reaction-area {
+
+  width: 92%;
+  max-width: 360px;
+
+  min-height: 34px;
+
+  margin: 9px auto 0;
+
+  text-align: center;
+}
+
+#reaction {
+
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #98677f;
+}
+
+
+/* =========================
+   FINISH SCENE
+========================= */
+
+.chaos-finish {
+
+  display: none;
+
+  position: relative;
+
+  width: 92%;
+  max-width: 370px;
+
+  margin: 25px auto 0;
+
+  padding: 34px 20px;
+
+  text-align: center;
+
+  background: rgba(255,255,255,.9);
+
+  border: 1px solid rgba(218,196,220,.72);
+
+  border-radius: 29px;
+
+  box-shadow:
+    0 13px 30px rgba(120,90,130,.14);
+
+  animation: finishAppear .7s ease;
+}
+
+@keyframes finishAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+.finish-eyes {
+
+  font-size: 51px;
+
+  margin-bottom: 13px;
+
+  animation: tinyPop 2s ease-in-out infinite;
+}
+
+.finish-piece {
+
+  position: absolute;
+
+  opacity: .55;
+
+  font-size: 18px;
+}
+
+.finish-one {
+  top: 18px;
+  left: 22px;
+}
+
+.finish-three {
+  bottom: 18px;
+  left: 28px;
+}
+
+.finish-four {
+  top: 22px;
+  right: 24px;
+}
+
+.finish-text h2 {
+
+  margin: 0 0 9px;
+
+  font-size: 23px;
+
+  font-weight: normal;
+
+  color: #805f82;
+}
+
+.finish-text p {
+
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   FINAL CARD
+========================= */
+
+.final-card {
+
+  display: none;
+
+  width: 92%;
+  max-width: 370px;
+
+  margin: 18px auto 0;
+
+  padding: 23px 20px;
+
+  text-align: center;
+
+  background: rgba(255,255,255,.95);
+
+  border-radius: 26px;
+
+  border: 1px solid rgba(218,196,220,.7);
+
+  box-shadow:
+    0 10px 25px rgba(120,90,130,.12);
+
+  animation: finishAppear .6s ease;
+}
+
+.final-card p {
+
+  margin: 0 0 17px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.back-button {
+
+  border: none;
+
+  border-radius: 24px;
+
+  padding: 11px 21px;
+
+  background: white;
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  box-shadow:
+    0 7px 18px rgba(120,90,130,.12);
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-button:active {
+
+  transform: scale(.94);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:360px) {
+
+  .play-area {
+    height: 300px;
+  }
+
+  .catch-card {
+    width: 90px;
+    height: 90px;
+  }
+
+  .catch-eyes {
+    font-size: 33px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main class="chaos-page">
+
+
+<!-- FLOATING DECOR -->
+
+<div class="decor decor-one">✦</div>
+<div class="decor decor-two">✧</div>
+<div class="decor decor-three">♡</div>
+<div class="decor decor-four">✦</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="chaos-header">
+
+  <div class="chaos-small">
+    you picked the chaos route 💀
+  </div>
+
+  <h1>
+    Oh... you chose THIS.
+  </h1>
+
+  <div class="chaos-line"></div>
+
+  <p>
+    There was a perfectly normal option.<br>
+    You ignored it. 😭
+  </p>
+
+</header>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section
+  class="intro-card"
+  id="intro"
+>
+
+  <div class="intro-icon">
+    👀
+  </div>
+
+  <h2>
+    Something is watching you.
+  </h2>
+
+  <p>
+    Your mission is simple.<br>
+    Catch the thing before it escapes.
+    <br><br>
+    Okay, let's do this.
+  </p>
+
+  <button
+    class="start-button"
+    id="startButton"
+    type="button"
+  >
+    Okay, let's do this 👀
+  </button>
+
+</section>
+
+
+<!-- =========================
+     GAME
+========================= -->
+
+<section
+  class="game"
+  id="game"
+>
+
+
+  <div class="game-title">
+
+    <h2>
+      Catch the eyes 👀
+    </h2>
+
+    <p>
+      It knows you're coming.
+    </p>
+
+  </div>
+
+
+  <!-- GAME BOX -->
+
+  <div
+    class="play-area"
+    id="playArea"
+  >
+
+    <!-- DECOR -->
+
+    <div class="game-spark spark-a">
+      ✦
+    </div>
+
+    <div class="game-spark spark-b">
+      ✧
+    </div>
+
+    <div class="game-spark spark-c">
+      ♡
+    </div>
+
+    <div class="game-spark spark-d">
+      ✦
+    </div>
+
+
+    <!-- POPPING CARD -->
+
+    <button
+      class="catch-card"
+      id="catchButton"
+      type="button"
+    >
+
+      <div class="catch-eyes">
+        👀
+      </div>
+
+      <div class="catch-label">
+        catch me
+      </div>
+
+    </button>
+
+  </div>
+
+
+  <!-- LEVEL BELOW THE BOX -->
+
+  <div class="level-area">
+
+    <div class="level-text">
+
+      Chaos level:
+      <span id="scoreText">
+        0 / 5
+      </span>
+
+    </div>
+
+    <div class="meter">
+
+      <div
+        class="meter-fill"
+        id="meterFill">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- REACTION -->
+
+  <div class="reaction-area">
+
+    <p id="reaction">
+      Tap it before it moves! 👀
+    </p>
+
+  </div>
+
+
+</section>
+
+
+<!-- =========================
+     EVERYTHING IS FINE
+========================= -->
+
+<section
+  class="chaos-finish"
+  id="chaosFinish"
+>
+
+  <div class="finish-eyes">
+    👀
+  </div>
+
+  <div class="finish-piece finish-one">
+    ✦
+  </div>
+
+  <div class="finish-piece finish-three">
+    ♡
+  </div>
+
+  <div class="finish-piece finish-four">
+    ✧
+  </div>
+
+  <div class="finish-text">
+
+    <h2>
+      EVERYTHING IS FINE.
+    </h2>
+
+    <p>
+      Definitely under control.<br>
+      Absolutely.<br>
+      Probably.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL CARD
+========================= -->
+
+<section
+  class="final-card"
+  id="finalCard"
+>
+
+  <p>
+    You caught the thing.
+    <br>
+    You survived the chaos.
+    <br>
+    Somehow. 😭
+  </p>
+
+  <button
+    class="back-button"
+    type="button"
+    onclick="window.location.href='page9.html'"
+  >
+    ← Back to the choices
+  </button>
+
+</section>
+
+
+</main>
+
+
+<script>
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const intro =
+  document.getElementById("intro");
+
+const game =
+  document.getElementById("game");
+
+const startButton =
+  document.getElementById("startButton");
+
+const catchButton =
+  document.getElementById("catchButton");
+
+const playArea =
+  document.getElementById("playArea");
+
+const reaction =
+  document.getElementById("reaction");
+
+const scoreText =
+  document.getElementById("scoreText");
+
+const meterFill =
+  document.getElementById("meterFill");
+
+const chaosFinish =
+  document.getElementById("chaosFinish");
+
+const finalCard =
+  document.getElementById("finalCard");
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+let score = 0;
+
+const total = 5;
+
+
+/* =========================
+   START GAME
+========================= */
+
+startButton.addEventListener(
+  "click",
+  function() {
+
+    intro.style.display = "none";
+
+    game.style.display = "block";
+
+    score = 0;
+
+    updateScore();
+
+    catchButton.style.display = "flex";
+
+    catchButton.style.transform = "none";
+
+    moveThing();
+
+  }
+);
+
+
+/* =========================
+   SCORE
+========================= */
+
+function updateScore() {
+
+  scoreText.textContent =
+    score + " / " + total;
+
+  meterFill.style.width =
+    (score / total * 100) + "%";
+
+}
+
+
+/* =========================
+   MOVE + POP
+========================= */
+
+function moveThing() {
+
+  const areaWidth =
+    playArea.clientWidth;
+
+  const areaHeight =
+    playArea.clientHeight;
+
+  const cardWidth =
+    catchButton.offsetWidth;
+
+  const cardHeight =
+    catchButton.offsetHeight;
+
+
+  const maxX =
+    Math.max(
+      5,
+      areaWidth - cardWidth - 6
+    );
+
+  const maxY =
+    Math.max(
+      5,
+      areaHeight - cardHeight - 6
+    );
+
+
+  const randomX =
+    Math.floor(
+      Math.random() * maxX
+    ) + 3;
+
+  const randomY =
+    Math.floor(
+      Math.random() * maxY
+    ) + 3;
+
+
+  catchButton.classList.remove("pop");
+
+  void catchButton.offsetWidth;
+
+  catchButton.classList.add("pop");
+
+
+  catchButton.style.left =
+    randomX + "px";
+
+  catchButton.style.top =
+    randomY + "px";
+
+}
+
+
+/* =========================
+   CATCH
+========================= */
+
+catchButton.addEventListener(
+  "click",
+  function() {
+
+    score++;
+
+    updateScore();
+
+
+    if (score < total) {
+
+      const reactions = [
+
+        "HA! Got you. 😭",
+
+        "Too slow! 💀",
+
+        "Again?! 👀",
+
+        "You actually caught it. 😭",
+
+        "It is getting nervous now. 💀"
+
+      ];
+
+      reaction.textContent =
+        reactions[score - 1];
+
+
+      setTimeout(
+        moveThing,
+        120
+      );
+
+    }
+
+
+    /* =====================
+       FINISH
+    ===================== */
+
+    if (score === total) {
+
+      reaction.textContent =
+        "Okay... that's enough. 💀";
+
+      catchButton.style.display =
+        "none";
+
+
+      setTimeout(
+        function() {
+
+          game.style.display =
+            "none";
+
+          chaosFinish.style.display =
+            "block";
+
+
+          setTimeout(
+            function() {
+
+              finalCard.style.display =
+                "block";
+
+            },
+            900
+          );
+
+        },
+        500
+      );
+
+    }
+
+  }
+);
+
+
+/* =========================
+   INITIAL POSITION
+========================= */
+
+window.addEventListener(
+  "load",
+  function() {
+
+    catchButton.style.left =
+      "50%";
+
+    catchButton.style.top =
+      "50%";
+
+    catchButton.style.transform =
+      "translate(-50%, -50%)";
+
+  }
+);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Almost There 💗</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: #705b72;
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 18px;
+
+  background:
+    radial-gradient(circle at 15% 15%, #fffafd 0%, transparent 30%),
+    radial-gradient(circle at 85% 25%, #eee4ff 0%, transparent 32%),
+    radial-gradient(circle at 15% 85%, #ffeaf4 0%, transparent 35%),
+    linear-gradient(135deg, #fff6fa, #f8f0ff);
+}
+
+
+/* =========================
+   FLOATING DECOR
+========================= */
+
+.decor {
+  position: absolute;
+  color: #c49ac8;
+  opacity: .55;
+  pointer-events: none;
+
+  animation: float 4s ease-in-out infinite;
+}
+
+.d1 {
+  top: 12%;
+  left: 9%;
+  font-size: 22px;
+}
+
+.d2 {
+  top: 20%;
+  right: 10%;
+  font-size: 17px;
+  animation-delay: 1s;
+}
+
+.d3 {
+  bottom: 15%;
+  left: 10%;
+  font-size: 20px;
+  animation-delay: .6s;
+}
+
+.d4 {
+  bottom: 20%;
+  right: 9%;
+  font-size: 18px;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+  width: 92%;
+  max-width: 390px;
+
+  padding: 35px 24px 30px;
+
+  text-align: center;
+
+  background: rgba(255,255,255,.82);
+
+  border: 1px solid rgba(218,196,220,.7);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 16px 38px rgba(120,90,130,.13);
+
+  animation: cardIn .8s ease;
+
+  position: relative;
+  z-index: 5;
+}
+
+@keyframes cardIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================
+   TOP
+========================= */
+
+.small {
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  opacity: .58;
+
+  margin-bottom: 13px;
+}
+
+.heart {
+
+  font-size: 40px;
+
+  color: #d29abb;
+
+  margin-bottom: 10px;
+
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+
+  font-size: 27px;
+
+  font-weight: normal;
+
+  color: #805f82;
+
+  margin-bottom: 15px;
+}
+
+.line {
+
+  width: 45px;
+
+  height: 1px;
+
+  margin: 0 auto 19px;
+
+  background: #cdaecc;
+}
+
+.message {
+
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  max-width: 315px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HIDDEN MESSAGE
+========================= */
+
+.hidden-message {
+
+  display: none;
+
+  margin-top: 22px;
+
+  animation: appear .6s ease;
+}
+
+.hidden-message p {
+
+  font-size: 14px;
+
+  line-height: 1.75;
+
+  margin-bottom: 18px;
+}
+
+@keyframes appear {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+  border: none;
+
+  border-radius: 26px;
+
+  padding: 13px 23px;
+
+  background: rgba(255,255,255,.96);
+
+  color: #805f82;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  box-shadow:
+    0 8px 20px rgba(120,90,130,.12);
+
+  cursor: pointer;
+
+  transition: transform .2s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+
+  transform: scale(.93);
+}
+
+
+/* =========================
+   FINAL BUTTON
+========================= */
+
+.final-button {
+
+  display: none;
+
+  margin-top: 5px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff,
+      #f8edff
+    );
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle {
+
+  position: fixed;
+
+  z-index: 100;
+
+  pointer-events: none;
+
+  color: #c99dce;
+
+  font-size: 21px;
+
+  animation: sparkle .9s ease forwards;
+}
+
+@keyframes sparkle {
+
+  0% {
+    opacity: 0;
+    transform: scale(.3) translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-40px);
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main class="page">
+
+
+<!-- DECOR -->
+
+<div class="decor d1">✦</div>
+<div class="decor d2">✧</div>
+<div class="decor d3">♡</div>
+<div class="decor d4">✦</div>
+
+
+<!-- CARD -->
+
+<section class="card">
+
+  <div class="small">
+    one last little thing... ♡
+  </div>
+
+  <div class="heart">
+    ♡
+  </div>
+
+  <h1>
+    Almost there, Kiki.
+  </h1>
+
+  <div class="line"></div>
+
+  <p class="message">
+
+    So...
+
+    <br><br>
+
+    You made it through the memories,
+    the choices, the chaos,
+    and whatever suspicious nonsense
+    was happening back there. 😭
+
+    <br><br>
+
+    And somehow, you're still here.
+
+  </p>
+
+
+  <!-- REVEAL BUTTON -->
+
+  <button
+    id="messageButton"
+    onclick="showMessage()"
+  >
+    There's one more thing → 💗
+  </button>
+
+
+  <!-- HIDDEN MESSAGE -->
+
+  <div
+    class="hidden-message"
+    id="hiddenMessage"
+  >
+
+    <p>
+
+      I hope you have a really good birthday.
+
+      <br><br>
+
+      Keep chasing the things you want,
+      keep laughing at the most random things,
+      and don't suddenly become too sensible.
+      That would be suspicious. 🤨
+
+      <br><br>
+
+      Whatever happens later,
+      I hope we still randomly end up texting:
+
+      <br><br>
+
+      <i>
+        “Hi, kaisi ho?”
+        <br>
+        “Thik hoon, tum kaisi ho?”
+      </i>
+
+      <br><br>
+
+      That's enough. ♡
+
+    </p>
+
+
+    <
+      <button
+  class="next-button"
+  onclick="window.location.href='page15.html'">
+  One more thing → ♡
+      </button>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<script>
+
+
+function showMessage() {
+
+  const button =
+    document.getElementById("messageButton");
+
+  const message =
+    document.getElementById("hiddenMessage");
+
+  const finalButton =
+    document.getElementById("finalButton");
+
+
+  button.style.display =
+    "none";
+
+
+  message.style.display =
+    "block";
+
+
+  finalButton.style.display =
+    "inline-block";
+
+
+  createSparkles();
+
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+function createSparkles() {
+
+  const symbols = [
+    "✦",
+    "✧",
+    "♡",
+    "✨"
+  ];
+
+
+  for (
+    let i = 0;
+    i < 9;
+    i++
+  ) {
+
+    const sparkle =
+      document.createElement("div");
+
+    sparkle.className =
+      "sparkle";
+
+    sparkle.textContent =
+      symbols[
+        Math.floor(
+          Math.random() *
+          symbols.length
+        )
+      ];
+
+
+    sparkle.style.left =
+      (20 + Math.random() * 60) + "%";
+
+
+    sparkle.style.top =
+      (25 + Math.random() * 50) + "%";
+
+
+    sparkle.style.animationDelay =
+      (Math.random() * .25) + "s";
+
+
+    document.body.appendChild(
+      sparkle
+    );
+
+
+    setTimeout(function() {
+
+      sparkle.remove();
+
+    }, 1000);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>

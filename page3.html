@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kiki 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+}
+
+.hunt-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 20% 20%, #fff7fb 0%, transparent 30%),
+    radial-gradient(circle at 80% 80%, #f3eaff 0%, transparent 30%),
+    linear-gradient(135deg, #fff4f8, #f8efff);
+
+  color: #6f5a72;
+}
+
+.hunt-title {
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
+
+  transform: translateY(-140px);
+}
+
+.small-text {
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  opacity: 0.7;
+}
+
+.hunt-title h1 {
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 1.15;
+  color: #805f82;
+  margin-bottom: 20px;
+}
+
+.hunt-message {
+  font-size: 20px;
+  color: #806681;
+}
+
+/* Dreamy decorations */
+
+.hunt-decoration {
+  position: absolute;
+  color: #c49ac8;
+  animation: float 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.decor-1 {
+  top: 9%;
+  left: 15%;
+  font-size: 30px;
+}
+
+.decor-2 {
+  top: 43%;
+  right: 15%;
+  font-size: 40px;
+  animation-delay: 1s;
+}
+
+.decor-3 {
+  bottom: 28%;
+  left: 20%;
+  font-size: 25px;
+  animation-delay: 1.5s;
+}
+
+.decor-4 {
+  bottom: 36%;
+  right: 25%;
+  font-size: 30px;
+  animation-delay: 2s;
+}
+
+/* Hidden heart */
+
+.hidden-treasure {
+  position: absolute;
+
+  top: 64%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 62px;
+  height: 62px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.35);
+
+  box-shadow: 0 8px 30px rgba(130,90,150,0.08);
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+
+  z-index: 5;
+}
+
+.hidden-treasure:active {
+  transform: translate(-50%, -50%) scale(0.88);
+}
+
+.hidden-treasure.found {
+  animation: found 0.6s ease;
+}
+
+/* Reaction directly below the heart */
+
+#hunt-reaction {
+  position: absolute;
+
+  top: 70%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 90%;
+
+  text-align: center;
+
+  font-size: 17px;
+
+  color: #a25f83;
+
+  min-height: 25px;
+
+  z-index: 5;
+}
+
+/* Continue button */
+
+.continue-button {
+  position: absolute;
+
+  bottom: 13%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border: none;
+
+  padding: 14px 25px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.82);
+
+  color: #765878;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+
+  box-shadow: 0 8px 25px rgba(120,90,130,0.15);
+
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, transform 0.2s ease;
+
+  z-index: 6;
+}
+
+.continue-button.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.continue-button:active {
+  transform: translateX(-50%) scale(0.94);
+}
+
+/* Animations */
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+}
+
+@keyframes found {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="hunt-page">
+
+  <div class="hunt-title">
+
+    <p class="small-text">
+      pssst... 👀
+    </p>
+
+    <h1>
+      Something is<br>
+      hidden here...
+    </h1>
+
+    <p class="hunt-message">
+      Can you find it? ✨
+    </p>
+
+  </div>
+
+  <!-- Dreamy decorations -->
+
+  <div class="hunt-decoration decor-1">✦</div>
+  <div class="hunt-decoration decor-2">♡</div>
+  <div class="hunt-decoration decor-3">✧</div>
+  <div class="hunt-decoration decor-4">♡</div>
+
+  <!-- Hidden heart -->
+
+  <button class="hidden-treasure" id="treasure">
+    💗
+  </button>
+
+  <!-- Reaction below heart -->
+
+  <p id="hunt-reaction"></p>
+
+  <!-- Continue to Page 4 -->
+
+  <button
+    class="continue-button"
+    id="continueButton"
+    onclick="window.location.href='page4.html'">
+    Continue → 💗
+  </button>
+
+</main>
+
+<script>
+
+const treasure = document.getElementById("treasure");
+const reaction = document.getElementById("hunt-reaction");
+const continueButton = document.getElementById("continueButton");
+
+treasure.addEventListener("click", function() {
+
+  treasure.classList.add("found");
+
+  reaction.textContent = "Aha! You found it! 💗✨";
+
+  continueButton.classList.add("show");
+
+});
+
+document.querySelector(".hunt-page").addEventListener("click", function(event) {
+
+  if (
+    event.target !== treasure &&
+    event.target !== continueButton
+  ) {
+
+    reaction.textContent = "Nope! Not here 👀";
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
